@@ -4,7 +4,9 @@ Adds the Cobra Monkey from BTD Battles. It looks like a sniper monkey.
 Thanks to Timotheeee for the custom tower template and letting people use it (https://github.com/Timotheeee/btd6_mods/tree/master/bloonchipper)
 
 Cost: $600 (Normal)
+
 Type: Military
+
 
 Upgrades:
 

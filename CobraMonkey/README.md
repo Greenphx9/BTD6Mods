@@ -16,7 +16,7 @@ Double Tap - +Fire-Rate, +Camo Detection
 
 Attrition - +1 Live Per Round
 
-Bloon Adjustment - Towers in Cobra's Range gain Camo detection, 3 Damage
+Benjamin's Assistant - Towers in Cobra's Range gain Camo detection, 3 Damage
 
 Benjamin's Right Hand Man - Ability Cooldown Reduced for all towers, 6 Damage, +Fire-Rate
 

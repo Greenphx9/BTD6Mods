@@ -1,6 +1,3 @@
-
-Will upload mod when Maycrom gives me permission.
-
 Inspired from Maycrom's Mod, Maymod.
 
 The Danmaku is a tower that shoots lots of projectiles. It is like a tack shooter, but always shoots, has infinite range and adds projectiles every upgrade.

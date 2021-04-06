@@ -4,6 +4,8 @@ The Danmaku is a tower that shoots lots of projectiles. It is like a tack shoote
 
 Cost: $1100 (Normal)
 
+Upgrades are outdated!!!
+
 Top Path:
 
 Dart Danmaku - Shoots 28 Darts out. Each dart deals 3 damage and has 2 pierce.

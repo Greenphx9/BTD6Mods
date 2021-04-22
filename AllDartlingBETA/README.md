@@ -1,3 +1,3 @@
 Its in beta.
 
-Towers that crash game: WizardMonkey-020, Phoenix
+Known Towers that crash game: WizardMonkey-020, Phoenix

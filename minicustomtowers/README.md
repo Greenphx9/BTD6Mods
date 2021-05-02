@@ -11,3 +11,7 @@ Sun Terror (3-5-0 supermonkey, no upgrades)
 Bionic MOAR Glaives (4-3-0 boomerang monkey, no upgrades)
 
 Bombjitsu (4-0-3 ninja monkey, no upgrades)
+
+planned:
+
+Spike-O-Pult (middle path only, 5 tiers)

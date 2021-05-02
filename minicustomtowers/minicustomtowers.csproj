@@ -130,6 +130,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Towers\Bombjitsu.cs" />
     <Compile Include="Towers\BionicMOARGlaives.cs" />
     <Compile Include="Towers\SunTerror.cs" />
     <Compile Include="Towers\Bloonjitsu.cs" />
@@ -149,6 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BionicGlaives.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bombjitsu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bombjitsu_Portrait.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

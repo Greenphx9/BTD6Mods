@@ -100,5 +100,21 @@ namespace minicustomtowers.Resources
                 return ((byte[])(obj));
             }
         }
+        internal static byte[] Bombjitsu
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Bombjitsu", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        internal static byte[] Bombjitsu_Portrait
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Bombjitsu_Portrait", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

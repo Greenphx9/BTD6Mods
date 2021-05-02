@@ -27,6 +27,9 @@ using Assets.Scripts.Simulation.Track;
 using static Assets.Scripts.Models.Towers.TargetType;
 using Assets.Scripts.Simulation;
 using minicustomtowers.Resources;
+using Assets.Scripts.Models.Rounds;
+using Assets.Scripts.Unity.Bridge;
+using Assets.Scripts.Simulation.Towers;
 
 namespace minicustomtowers
 {
@@ -46,8 +49,47 @@ namespace minicustomtowers
                 MelonLogger.Msg("Sun Terror Loaded");
                 minicustomtowers.Towers.BionicMOARGlaives.Init();
                 MelonLogger.Msg("Bionic MOAR Glaives Loaded");
+                minicustomtowers.Towers.Bombjitsu.Init();
+                MelonLogger.Msg("Bombjitsu Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
+            }
+        }
+
+        [HarmonyPatch(typeof(Tower), nameof(Tower.Initialise))]
+        public class Tower_Patch
+        {
+            [HarmonyPostfix]
+            public static void Postfix()
+            {
+                //for some reason some textures have all other upgrade textures so gonna load those like this
+                foreach (TowerToSimulation towerToSimulation in InGame.instance.bridge.GetAllTowers())
+                {
+                    if (towerToSimulation.Def.baseId == "Bombjitsu")
+                    {
+                        try
+                        {
+                            Texture2D tex;
+                            tex = CacheBuilder.Get("Bombjitsu");
+                            //Console.WriteLine("loading custom texture for " + towername);
+                            //ImageConversion.LoadImage(CacheBuilder.Get("Bombjitsu"), null);
+                            //Console.WriteLine("adding to dict");
+                            //Console.WriteLine("found custom texture for " + towername);
+                            foreach (Renderer renderer in towerToSimulation.tower.Node.graphic.genericRenderers)
+                            {
+                                //Texture2D tex = new Texture2D(2, 2);
+                                //ImageConversion.LoadImage(tex, File.ReadAllBytes(filePath + "custom/" + towerlocation));
+                                //Console.WriteLine("loaded custom texture for " + towername);
+
+                                renderer.material.mainTexture = tex;
+                            }
+                        }
+                        catch
+                        {
+                            
+                        }
+                    }
+                }
             }
         }
 
@@ -72,7 +114,7 @@ namespace minicustomtowers
             bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
             if (inAGame)
             {
-
+               
             }
         }
 

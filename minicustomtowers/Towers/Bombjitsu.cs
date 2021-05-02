@@ -45,19 +45,20 @@ using Assets.Scripts.Unity.Bridge;
 using Assets.Scripts.Simulation.Towers.Projectiles;
 using MelonLoader;
 using Harmony;
+using minicustomtowers.Resources;
 
 namespace minicustomtowers.Towers
 {
-    class SunTerror
+    class Bombjitsu
     {
        
                 public static void Init()
         { 
-                Console.WriteLine("Initializing Sun Terror");
+               
 
                 if (!LocalizationManager.instance.textTable.ContainsKey(customTowerName))
                 {
-                    LocalizationManager.instance.textTable.Add(customTowerName, "Sun Terror");
+                    LocalizationManager.instance.textTable.Add(customTowerName, "Bombjitsu");
                 }
             
 
@@ -86,8 +87,7 @@ namespace minicustomtowers.Towers
                         flag = true;
                     }
                 }
-            CacheBuilder.toBuild.PushAll("SunTerror");
-            Console.WriteLine("Sun Terror Initialized!");
+            CacheBuilder.toBuild.PushAll("Bombjitsu", "Bombjitsu_Portrait");
             }
    
 
@@ -97,7 +97,7 @@ namespace minicustomtowers.Towers
         static string customTowerIcon050;
         static string customTowerIcon040;
         static string customTowerImages = @"Mods/cobramonkey/";
-        static string customTowerName = "Sun Terror";
+        static string customTowerName = "Bombjitsu";
         static string customTowerDisplay = "";
         //static string customTowerUpgrade1 = "Bloon Distraction";
         //static string customTowerUpgrade2 = "Sharper Shurikens";
@@ -111,25 +111,25 @@ namespace minicustomtowers.Towers
 
         public static TowerModel getT0(GameModel gameModel)
         {
-            TowerModel towerModel = gameModel.GetTowerFromId("SuperMonkey-250").Duplicate<TowerModel>(); //gameModel.GetTowerFromId(Alchemist).Duplicate<TowerModel>();
+            TowerModel towerModel = gameModel.GetTowerFromId("NinjaMonkey-402").Duplicate<TowerModel>(); //gameModel.GetTowerFromId(Alchemist).Duplicate<TowerModel>();
             towerModel.name = customTowerName;
             towerModel.baseId = customTowerName;
-            towerModel.portrait = new SpriteReference(guid: "SunTerror");
-            towerModel.icon = new SpriteReference(guid: "SunTerror");
-            towerModel.instaIcon = new SpriteReference(guid: "SunTerror");
-            towerModel.display = "a669471da61c7a64290f842efd11d06d";
-            towerModel.GetBehavior<DisplayModel>().display = "a669471da61c7a64290f842efd11d06d";
+            towerModel.portrait = new SpriteReference(guid: "Bombjitsu_Portrait");
+            towerModel.icon = new SpriteReference(guid: "Bombjitsu_Portrait");
+            towerModel.instaIcon = new SpriteReference(guid: "Bombjitsu_Portrait");
+            towerModel.display = "19ba0e6ba259f274ba80df67681e1839";
+            towerModel.GetBehavior<DisplayModel>().display = "19ba0e6ba259f274ba80df67681e1839";
             towerModel.towerSet = "Magic";
             towerModel.dontDisplayUpgrades = true;
-            towerModel.cost = 125000f;
-            towerModel.GetBehavior<DisplayModel>().scale *= 1.5f;
+            towerModel.cost = 6450f;
             towerModel.isGlobalRange = false;
             towerModel.tiers = new int[] { 0, 0, 0 };
             var attackModel = towerModel.GetBehavior<AttackModel>();
-            attackModel.weapons[0].emission = gameModel.GetTowerFromId("SuperMonkey-320").GetWeapon().emission;
-            towerModel.GetAttackModel(1).weapons[0].emission = gameModel.GetTowerFromId("SuperMonkey-320").GetWeapon().emission;
+            attackModel.AddWeapon(attackModel.weapons[0].Duplicate<WeaponModel>());
+            var flashBomb = gameModel.GetTowerFromId("NinjaMonkey-203").GetWeapon().GetBehavior<AlternateProjectileModel>().projectile.Duplicate<ProjectileModel>();
+            attackModel.weapons[1].projectile = flashBomb;
+            attackModel.weapons[1].Rate *= 3;
             return towerModel;
-
         }
 
 

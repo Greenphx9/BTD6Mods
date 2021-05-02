@@ -121,6 +121,12 @@
   <data name="BionicGlaives" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BionicGlaives.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Bombjitsu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Bombjitsu.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bombjitsu_Portrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	  <value>Bombjitsu_Portrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="FlaminShuriken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>FlaminShuriken.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

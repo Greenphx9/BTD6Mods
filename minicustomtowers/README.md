@@ -1,8 +1,17 @@
-press f9 to use
+Credits to KosmicShovel / 1330-Studios for most of the custom textures code, and Timotheeee for some of it.
 
+Adds in custom towers that are too small to be their own custom mods.
 
-credits:
+Currently added:
 
-Mootykins for figuring out how to remove character validation
+Bloonjitsu (middle path only, 5 tiers)
 
-Hemidemisemipresent for the code that uses StartOfRoundRateBuffModel
+Sun Terror (3-5-0 supermonkey, no upgrades)
+
+Bionic MOAR Glaives (4-3-0 boomerang monkey, no upgrades)
+
+Bombjitsu (4-0-3 ninja monkey, no upgrades)
+
+planned:
+
+Spike-O-Pult (middle path only, 5 tiers)

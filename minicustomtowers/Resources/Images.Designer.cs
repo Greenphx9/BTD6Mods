@@ -116,5 +116,13 @@ namespace minicustomtowers.Resources
                 return ((byte[])(obj));
             }
         }
+        internal static byte[] OperationNevaMiss
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("OperationNevaMiss", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

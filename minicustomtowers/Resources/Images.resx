@@ -125,10 +125,13 @@
     <value>Bombjitsu.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Bombjitsu_Portrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	  <value>Bombjitsu_Portrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Bombjitsu_Portrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="FlaminShuriken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>FlaminShuriken.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OperationNevaMiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	  <value>OperationNevaMiss.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="shader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\shader.bundle;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

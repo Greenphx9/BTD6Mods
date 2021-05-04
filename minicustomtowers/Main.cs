@@ -51,6 +51,10 @@ namespace minicustomtowers
                 MelonLogger.Msg("Bionic MOAR Glaives Loaded");
                 minicustomtowers.Towers.Bombjitsu.Init();
                 MelonLogger.Msg("Bombjitsu Loaded");
+                minicustomtowers.Towers.OperationNevaMiss.Init();
+                MelonLogger.Msg("Operation: Neva-Miss Loaded");
+                minicustomtowers.Towers.AceGunner.Init();
+                MelonLogger.Msg("Ace Gunner Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
             }

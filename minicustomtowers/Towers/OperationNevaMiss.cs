@@ -45,10 +45,11 @@ using Assets.Scripts.Unity.Bridge;
 using Assets.Scripts.Simulation.Towers.Projectiles;
 using MelonLoader;
 using Harmony;
+using minicustomtowers.Resources;
 
 namespace minicustomtowers.Towers
 {
-    class BionicMOARGlaives
+    class OperationNevaMiss
     {
        
                 public static void Init()
@@ -57,7 +58,7 @@ namespace minicustomtowers.Towers
 
                 if (!LocalizationManager.instance.textTable.ContainsKey(customTowerName))
                 {
-                    LocalizationManager.instance.textTable.Add(customTowerName, "Bionic MOAR Glaives");
+                    LocalizationManager.instance.textTable.Add(customTowerName, "Operation Neva-Miss");
                 }
             
 
@@ -86,7 +87,7 @@ namespace minicustomtowers.Towers
                         flag = true;
                     }
                 }
-            CacheBuilder.toBuild.PushAll("BionicGlaives");
+            CacheBuilder.toBuild.PushAll("OperationNevaMiss");
             }
    
 
@@ -96,7 +97,7 @@ namespace minicustomtowers.Towers
         static string customTowerIcon050;
         static string customTowerIcon040;
         static string customTowerImages = @"Mods/cobramonkey/";
-        static string customTowerName = "Bionic MOAR Glaives";
+        static string customTowerName = "Operation Neva-Miss";
         static string customTowerDisplay = "";
         //static string customTowerUpgrade1 = "Bloon Distraction";
         //static string customTowerUpgrade2 = "Sharper Shurikens";
@@ -110,27 +111,23 @@ namespace minicustomtowers.Towers
 
         public static TowerModel getT0(GameModel gameModel)
         {
-            TowerModel towerModel = gameModel.GetTowerFromId("BoomerangMonkey-402").Duplicate<TowerModel>(); //gameModel.GetTowerFromId(Alchemist).Duplicate<TowerModel>();
+            TowerModel towerModel = gameModel.GetTowerFromId("MonkeyAce-402").Duplicate<TowerModel>(); //gameModel.GetTowerFromId(Alchemist).Duplicate<TowerModel>();
             towerModel.name = customTowerName;
             towerModel.baseId = customTowerName;
-            towerModel.portrait = new SpriteReference(guid: "BionicGlaives");
-            towerModel.icon = new SpriteReference(guid: "BionicGlaives");
-            towerModel.instaIcon = new SpriteReference(guid: "BionicGlaives");
-            //towerModel.display = "a669471da61c7a64290f842efd11d06d";
-            //towerModel.GetBehavior<DisplayModel>().display = "a669471da61c7a64290f842efd11d06d";
-            towerModel.towerSet = "Primary";
+            towerModel.portrait = new SpriteReference(guid: "OperationNevaMiss");
+            towerModel.icon = new SpriteReference(guid: "OperationNevaMiss");
+            towerModel.instaIcon = new SpriteReference(guid: "OperationNevaMiss");
             towerModel.dontDisplayUpgrades = true;
-            towerModel.cost = 6450f;
+            towerModel.cost = 9270f;
             towerModel.isGlobalRange = false;
             towerModel.tiers = new int[] { 0, 0, 0 };
             var attackModel = towerModel.GetBehavior<AttackModel>();
-            attackModel.weapons[0].Rate = 0.14f;
-            var turboAbility = gameModel.GetTowerFromId("BoomerangMonkey-240").GetBehavior<AbilityModel>().Duplicate<AbilityModel>();
-            towerModel.AddBehavior(turboAbility);
-            towerModel.GetBehavior<AbilityModel>().GetBehavior<TurboModel>().multiplier = 0.07f;
-            towerModel.GetBehavior<AbilityModel>().icon = new SpriteReference(guid: "BionicGlaives");
+            var seeking = gameModel.GetTowerFromId("MonkeyAce-203").GetWeapon().projectile.GetBehavior<TrackTargetModel>().Duplicate<TrackTargetModel>();
+            attackModel.weapons[0].projectile.AddBehavior(seeking);
+            var travelStrait = gameModel.GetTowerFromId("MonkeyAce-203").GetWeapon().projectile.GetBehavior<TravelStraitModel>().Duplicate<TravelStraitModel>();
+            attackModel.weapons[0].projectile.RemoveBehavior<TravelStraitModel>();
+            attackModel.weapons[0].projectile.AddBehavior(travelStrait);
             return towerModel;
-
         }
 
 

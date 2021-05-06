@@ -124,5 +124,13 @@ namespace minicustomtowers.Resources
                 return ((byte[])(obj));
             }
         }
+        internal static byte[] TripleJuggernaut
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("TripleJuggernaut", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

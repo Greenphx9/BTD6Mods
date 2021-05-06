@@ -134,6 +134,7 @@
     <Compile Include="Towers\OperationNevaMiss.cs" />
     <Compile Include="Towers\Bombjitsu.cs" />
     <Compile Include="Towers\BionicMOARGlaives.cs" />
+    <Compile Include="Towers\TripleJuggernaut.cs" />
     <Compile Include="Towers\SunTerror.cs" />
     <Compile Include="Towers\Bloonjitsu.cs" />
   </ItemGroup>
@@ -161,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\OperationNevaMiss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TripleJuggernaut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

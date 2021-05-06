@@ -55,6 +55,8 @@ namespace minicustomtowers
                 MelonLogger.Msg("Operation: Neva-Miss Loaded");
                 minicustomtowers.Towers.AceGunner.Init();
                 MelonLogger.Msg("Ace Gunner Loaded");
+                minicustomtowers.Towers.TripleJuggernaut.Init();
+                MelonLogger.Msg("Triple Juggernaut Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
             }

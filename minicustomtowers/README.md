@@ -12,9 +12,11 @@ Bionic MOAR Glaives (4-3-0 boomerang monkey, no upgrades)
 
 Bombjitsu (4-0-3 ninja monkey, no upgrades)
 
-Operation: Neva-Miss (4-0-3 monkey ace, no upgrade)
+Operation: Neva-Miss (4-0-3 monkey ace, no upgrades)
 
 Ace Gunner (close-range monkey ace, middle path only, 5 upgrades)
+
+Triple Juggernaut (4-3-2 dart monkey (no extra attack speed), no upgrades)
 
 planned:
 

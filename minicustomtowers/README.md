@@ -1,3 +1,5 @@
+Join the discord for updates and other stuff: https://discord.gg/zN3kBbEUbK
+
 Credits to KosmicShovel / 1330-Studios for most of the custom textures code, and Timotheeee for some of it.
 
 Adds in custom towers that are too small to be their own custom mods.

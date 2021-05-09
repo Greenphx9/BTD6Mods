@@ -59,6 +59,8 @@ namespace minicustomtowers
                 MelonLogger.Msg("Triple Juggernaut Loaded");
                 minicustomtowers.Towers.CannonDestroyer.Init();
                 MelonLogger.Msg("Cannon Destroyer Loaded");
+                minicustomtowers.Towers.BladeSprayer.Init();
+                MelonLogger.Msg("Blade Sprayer Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
             }

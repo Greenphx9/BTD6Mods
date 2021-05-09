@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//This code has been modified from 1330 Studio's BTD6E Modules. Huge thanks to them for letting me use this code.
+
 namespace minicustomtowers.Resources
 { 
     using System;

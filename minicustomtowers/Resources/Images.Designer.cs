@@ -134,5 +134,13 @@ namespace minicustomtowers.Resources
                 return ((byte[])(obj));
             }
         }
+        internal static byte[] BananaRepublic
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("BananaRepublic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

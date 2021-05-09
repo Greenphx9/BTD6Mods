@@ -72,6 +72,33 @@ namespace SixthTiers.Tasks
                             }));
                         return false;
                     }
+                    if (objectId.Equals("BananaRepublic"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("cb759f344fefeee48ada3c4e11696ba1",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() ==
+                                        Il2CppType.Of<SkinnedMeshRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SkinnedMeshRenderer>();
+                                        //smr.material.shader = assets[0].Cast<Shader>();
+                                        smr.material.mainTexture = CacheBuilder.Get("BananaRepublic");
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
                     if (objectId.Equals("Bombjitsu"))
                     {
                         UnityDisplayNode udn = null;

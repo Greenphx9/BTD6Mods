@@ -61,6 +61,8 @@ namespace minicustomtowers
                 MelonLogger.Msg("Cannon Destroyer Loaded");
                 minicustomtowers.Towers.BladeSprayer.Init();
                 MelonLogger.Msg("Blade Sprayer Loaded");
+                minicustomtowers.Towers.RetroBananaFarm.Init();
+                MelonLogger.Msg("Retro Banana Farm Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
             }

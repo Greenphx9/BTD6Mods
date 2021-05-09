@@ -59,8 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -119,14 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BananaRepublic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	  <value>BananaRepublic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="BionicGlaives" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BionicGlaives.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="BladeSprayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	  <value>BladeSprayer.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>BladeSprayer.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="BladeSprayer_Portrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	  <value>BladeSprayer_Portrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>BladeSprayer_Portrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Bombjitsu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Bombjitsu.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -142,6 +144,21 @@
   </data>
   <data name="OperationNevaMiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>OperationNevaMiss.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RetroBananaFarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>RetroBananaFarm.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RetroBananaFarm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>RetroBananaFarm1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RetroBananaFarm2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>RetroBananaFarm2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RetroBananaFarm3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>RetroBananaFarm3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RetroBananaFarm4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>RetroBananaFarm4.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="shader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\shader.bundle;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

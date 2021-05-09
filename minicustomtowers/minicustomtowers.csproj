@@ -130,6 +130,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Towers\RetroBananaFarm.cs" />
     <Compile Include="Towers\AceGunner.cs" />
     <Compile Include="Towers\BladeSprayer.cs" />
     <Compile Include="Towers\CannonDestroyer.cs" />
@@ -176,6 +177,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BladeSprayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetroBananaFarm4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetroBananaFarm3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetroBananaFarm2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetroBananaFarm1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RetroBananaFarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BananaRepublic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

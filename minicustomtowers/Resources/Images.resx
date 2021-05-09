@@ -127,6 +127,9 @@
   <data name="Bombjitsu_Portrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Bombjitsu_Portrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="CannonDestroyer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	  <value>CannonDestroyer.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="FlaminShuriken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>FlaminShuriken.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -140,6 +143,6 @@
     <value>SunTerror.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="TripleJuggernaut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	  <value>TripleJuggernaut.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>TripleJuggernaut.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

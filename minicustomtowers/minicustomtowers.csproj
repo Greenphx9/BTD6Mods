@@ -36,8 +36,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="BloonsTD6 Mod Helper">
-      <HintPath>D:\Steam\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
+    <Reference Include="BloonsTD6 Mod Helper, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\ModsPlay\BloonsTD6 Mod Helper.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
@@ -130,6 +131,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Towers\AceGunner.cs" />
+    <Compile Include="Towers\CannonDestroyer.cs" />
     <Compile Include="Towers\OperationNevaMiss.cs" />
     <Compile Include="Towers\Bombjitsu.cs" />
     <Compile Include="Towers\BionicMOARGlaives.cs" />
@@ -164,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TripleJuggernaut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CannonDestroyer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

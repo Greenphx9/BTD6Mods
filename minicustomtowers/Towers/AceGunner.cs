@@ -174,7 +174,7 @@ namespace minicustomtowers.Towers
         static string customTowerImages = @"Mods/cobramonkey/";
         static string customTowerName = "Ace Gunner";
         static string customTowerDisplay = "";
-        static string customTowerUpgrade1 = "Sharper Darts";
+        static string customTowerUpgrade1 = "Sharper Darts ";
         static string customTowerUpgrade2 = "Dart Enhancement";
         static string customTowerUpgrade3 = "Faster Firing Darts";
         static string customTowerUpgrade4 = "Big Bombs";

@@ -23,3 +23,5 @@ Triple Juggernaut (4-3-2 dart monkey (no attack speed bonus), no upgrades)
 Cannon Destroyer (3-3-0 monkey buccaneer, no upgrades)
 
 Blade Sprayer (2-3-3 tack shooter, no upgrades)
+
+Retro Banana Farm (btd 4 banana farm (cash per round), 5 upgrades)

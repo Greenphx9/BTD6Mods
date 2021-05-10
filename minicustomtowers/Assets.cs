@@ -153,6 +153,33 @@ namespace SixthTiers.Tasks
                             }));
                         return false;
                     }
+                    if (objectId.Equals("UnloaderDartlingGunner"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("f8d6088e1ff66c248a5e23c6851ba27a",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() ==
+                                        Il2CppType.Of<SkinnedMeshRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SkinnedMeshRenderer>();
+                                        //smr.material.shader = assets[0].Cast<Shader>();
+                                        smr.material.mainTexture = CacheBuilder.Get("UnloaderDartlingGunner");
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
 
                 }
 

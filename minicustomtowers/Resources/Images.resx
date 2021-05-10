@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BananaRepublic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	  <value>BananaRepublic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>BananaRepublic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="BionicGlaives" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BionicGlaives.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -168,5 +168,11 @@
   </data>
   <data name="TripleJuggernaut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>TripleJuggernaut.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UnloaderDartling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>UnloaderDartling.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UnloaderDartlingGunner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	  <value>UnloaderDartlingGunner.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -30,6 +30,7 @@ using minicustomtowers.Resources;
 using Assets.Scripts.Models.Rounds;
 using Assets.Scripts.Unity.Bridge;
 using Assets.Scripts.Simulation.Towers;
+using Assets.Scripts.Models.TowerSets;
 
 namespace minicustomtowers
 {
@@ -65,6 +66,10 @@ namespace minicustomtowers
                 MelonLogger.Msg("Retro Banana Farm Loaded");
                 minicustomtowers.Towers.UnloaderDartling.Init();
                 MelonLogger.Msg("Unloader Dartling Gunner Loaded");
+                minicustomtowers.Towers.BloontoniumDarts.Init();
+                MelonLogger.Msg("Bloontonium Darts Loaded");
+                minicustomtowers.Towers.FrostBreath.Init();
+                MelonLogger.Msg("Frost Breath Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
             }
@@ -94,7 +99,6 @@ namespace minicustomtowers
                
             }
         }
-
 
 
 

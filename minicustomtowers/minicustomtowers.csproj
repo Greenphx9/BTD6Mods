@@ -130,6 +130,8 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Towers\FrostBreath.cs" />
+    <Compile Include="Towers\BloontoniumDarts.cs" />
     <Compile Include="Towers\UnloaderDartling.cs" />
     <Compile Include="Towers\RetroBananaFarm.cs" />
     <Compile Include="Towers\AceGunner.cs" />
@@ -198,10 +200,37 @@
     <None Include="Resources\BananaRepublic.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\UnloaderDartlingGunner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloontoniumDarts2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloontoniumDarts1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloontoniumDartsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloontoniumDartsPortrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrostBreath.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\UnloaderDartling.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\UnloaderDartlingGunner.png" />
+    <None Include="Resources\FrostBreath1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrostBreathBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrostBreathWhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\steamapps\common\BloonsTD6\Mods"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

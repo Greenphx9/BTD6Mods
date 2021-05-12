@@ -142,5 +142,21 @@ namespace minicustomtowers.Resources
                 return ((byte[])(obj));
             }
         }
+        internal static byte[] FrostBreathBlue
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("FrostBreathBlue", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        internal static byte[] FrostBreathWhite
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("FrostBreathWhite", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

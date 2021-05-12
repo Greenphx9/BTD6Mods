@@ -72,6 +72,54 @@ namespace SixthTiers.Tasks
                             }));
                         return false;
                     }
+                    if (objectId.Equals("FrostBreathBlue"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("c73fd08146403e14fbcebd3cbf600b88",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
+                    if (objectId.Equals("FrostBreathWhite"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("c73fd08146403e14fbcebd3cbf600b88",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
                     if (objectId.Equals("BananaRepublic"))
                     {
                         UnityDisplayNode udn = null;

@@ -130,6 +130,18 @@
   <data name="BladeSprayer_Portrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BladeSprayer_Portrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="BloontoniumDarts1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BloontoniumDarts1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BloontoniumDarts2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BloontoniumDarts2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BloontoniumDartsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BloontoniumDartsIcon.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BloontoniumDartsPortrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BloontoniumDartsPortrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Bombjitsu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Bombjitsu.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -141,6 +153,18 @@
   </data>
   <data name="FlaminShuriken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>FlaminShuriken.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FrostBreath" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>FrostBreath.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FrostBreath1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>FrostBreath1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FrostBreathBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>FrostBreathBlue.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FrostBreathWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+	  <value>FrostBreathWhite.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="OperationNevaMiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>OperationNevaMiss.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -173,6 +197,6 @@
     <value>UnloaderDartling.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="UnloaderDartlingGunner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	  <value>UnloaderDartlingGunner.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>UnloaderDartlingGunner.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

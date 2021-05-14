@@ -158,5 +158,61 @@ namespace minicustomtowers.Resources
                 return ((byte[])(obj));
             }
         }
+        internal static byte[] LightSabre
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("LightSabre", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        internal static byte[] LightsabreMonkey
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("LightsabreMonkey", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        internal static byte[] Plasma0
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Plasma0", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        internal static byte[] Plasma1
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Plasma1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        internal static byte[] Plasma2
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Plasma2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        internal static byte[] Plasma3
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Plasma3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        internal static byte[] Plasma4
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Plasma4", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

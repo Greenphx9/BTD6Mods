@@ -23,7 +23,6 @@ namespace minicustomtowers
                 if (Images.ResourceManager.GetObject(id) is not byte[] bitmap) break;
                 //var v = id.Contains("center") ? 0.5f : 0f;
                 built.Add(id, Convert.ToBase64String(bitmap));
-                MelonLogger.Msg(built.ToString());
             }
         }
 

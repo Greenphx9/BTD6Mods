@@ -130,6 +130,8 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Towers\PlasmaMonkey.cs" />
+    <Compile Include="Towers\LightsabreThrower.cs" />
     <Compile Include="Towers\FrostBreath.cs" />
     <Compile Include="Towers\BloontoniumDarts.cs" />
     <Compile Include="Towers\UnloaderDartling.cs" />
@@ -228,6 +230,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FrostBreathWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LightsabreThrower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LightsabreMonkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LightSabre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OmegaRays.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GammaRays.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SolarFlares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Potency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuadWhips.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plasma0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plasma1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plasma4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plasma3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plasma2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlasmaMonkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlasmaMonkey5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlasmaMonkey4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlasmaMonkey3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlasmaMonkey2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

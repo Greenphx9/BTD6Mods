@@ -70,6 +70,10 @@ namespace minicustomtowers
                 MelonLogger.Msg("Bloontonium Darts Loaded");
                 minicustomtowers.Towers.FrostBreath.Init();
                 MelonLogger.Msg("Frost Breath Loaded");
+                minicustomtowers.Towers.LightsabreThrower.Init();
+                MelonLogger.Msg("Lightsabre Thrower Loaded");
+                minicustomtowers.Towers.PlasmaMonkey.Init();
+                MelonLogger.Msg("Plasma Monkey Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
             }

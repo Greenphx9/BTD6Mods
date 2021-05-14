@@ -120,6 +120,174 @@ namespace SixthTiers.Tasks
                             }));
                         return false;
                     }
+                    if (objectId.Equals("LightSabre"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("842be402795e7334cbc77d33b6746bff",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
+                    if (objectId.Equals("LightsabreMonkey"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("c73fd08146403e14fbcebd3cbf600b88",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
+                    if (objectId.Equals("Plasma0"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("7c001a7fcad3c6d48b14aacba03a98bc",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
+                    if (objectId.Equals("Plasma1"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("7c001a7fcad3c6d48b14aacba03a98bc",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
+                    if (objectId.Equals("Plasma2"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("7c001a7fcad3c6d48b14aacba03a98bc",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
+                    if (objectId.Equals("Plasma3"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("7c001a7fcad3c6d48b14aacba03a98bc",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
+                    if (objectId.Equals("Plasma4"))
+                    {
+                        UnityDisplayNode udn = null;
+                        __instance.FindAndSetupPrototypeAsync("7c001a7fcad3c6d48b14aacba03a98bc",
+                            new System.Action<UnityDisplayNode>(oudn => {
+                                var nudn = Object.Instantiate(oudn, __instance.PrototypeRoot);
+                                nudn.name = objectId + "(Clone)";
+                                nudn.isSprite = true;
+                                nudn.RecalculateGenericRenderers();
+                                for (var i = 0; i < nudn.genericRenderers.Length; i++)
+                                {
+                                    if (nudn.genericRenderers[i].GetIl2CppType() == Il2CppType.Of<SpriteRenderer>())
+                                    {
+                                        var smr = nudn.genericRenderers[i].Cast<SpriteRenderer>();
+                                        smr.sprite = SpriteBuilder.createProjectile(CacheBuilder.Get(objectId));
+                                        nudn.genericRenderers[i] = smr;
+                                    }
+                                }
+
+                                udn = nudn;
+                                onComplete.Invoke(udn);
+                            }));
+                        return false;
+                    }
                     if (objectId.Equals("BananaRepublic"))
                     {
                         UnityDisplayNode udn = null;

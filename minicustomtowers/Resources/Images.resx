@@ -164,10 +164,61 @@
     <value>FrostBreathBlue.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="FrostBreathWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	  <value>FrostBreathWhite.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>FrostBreathWhite.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GammaRays" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>GammaRays.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LightSabre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>LightSabre.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LightsabreMonkey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>LightsabreMonkey.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LightsabreThrower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>LightsabreThrower.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OmegaRays" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>OmegaRays.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="OperationNevaMiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>OperationNevaMiss.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Plasma0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Plasma0.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Plasma1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Plasma1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Plasma2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Plasma2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Plasma3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Plasma3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Plasma4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Plasma4.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PlasmaMonkey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PlasmaMonkey.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PlasmaMonkey2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PlasmaMonkey2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PlasmaMonkey3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PlasmaMonkey4.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PlasmaMonkey4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PlasmaMonkey3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PlasmaMonkey5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PlasmaMonkey5.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Potency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Potency.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="QuadWhips" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>QuadWhips.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="RetroBananaFarm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>RetroBananaFarm.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -186,6 +237,9 @@
   </data>
   <data name="shader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\shader.bundle;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SolarFlares" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SolarFlares.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SunTerror" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SunTerror.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

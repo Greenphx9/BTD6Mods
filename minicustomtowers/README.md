@@ -27,3 +27,7 @@ Blade Sprayer (2-3-3 tack shooter, no upgrades)
 Retro Banana Farm (btd 4 banana farm (cash per round), 5 upgrades)
 
 Unloader Dartling Gunner (btd x left path dartling gunner (sort of like buckshot), no upgrades)
+
+Bloontonium Darts (btd x left path dart monkey, 2 upgrades)
+
+Frost Breath (dragons breath but ice, 5 upgrades)

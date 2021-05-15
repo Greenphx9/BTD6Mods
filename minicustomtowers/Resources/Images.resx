@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Attrition" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Attrition.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="BananaRepublic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BananaRepublic.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -129,6 +132,15 @@
   </data>
   <data name="BladeSprayer_Portrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BladeSprayer_Portrait.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BloonAdjustment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BloonAdjustment.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BloonDrain1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BloonDrain1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BloonDrain2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BloonDrain2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="BloontoniumDarts1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BloontoniumDarts1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -150,6 +162,15 @@
   </data>
   <data name="CannonDestroyer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>CannonDestroyer.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CobraMonkey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>CobraMonkey.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DoubleTap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>DoubleTap.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FinishHim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>FinishHim.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="FlaminShuriken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>FlaminShuriken.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -177,6 +198,15 @@
   </data>
   <data name="LightsabreThrower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>LightsabreThrower.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Misdirection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Misdirection.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonkeyStim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>MonkeyStim.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OffensivePush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>OffensivePush.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="OmegaRays" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>OmegaRays.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -252,5 +282,8 @@
   </data>
   <data name="UnloaderDartlingGunner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>UnloaderDartlingGunner.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WiredFunds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>WiredFunds.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

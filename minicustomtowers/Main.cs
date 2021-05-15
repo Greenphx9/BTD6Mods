@@ -74,6 +74,8 @@ namespace minicustomtowers
                 MelonLogger.Msg("Lightsabre Thrower Loaded");
                 minicustomtowers.Towers.PlasmaMonkey.Init();
                 MelonLogger.Msg("Plasma Monkey Loaded");
+                minicustomtowers.Towers.CobraMonkey.Init();
+                MelonLogger.Msg("Cobra Monkey Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
             }
@@ -100,9 +102,10 @@ namespace minicustomtowers
             bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
             if (inAGame)
             {
-               
+
             }
         }
+
 
 
 

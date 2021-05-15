@@ -130,10 +130,12 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Towers\BloonDrain.cs" />
     <Compile Include="Towers\PlasmaMonkey.cs" />
     <Compile Include="Towers\LightsabreThrower.cs" />
     <Compile Include="Towers\FrostBreath.cs" />
     <Compile Include="Towers\BloontoniumDarts.cs" />
+    <Compile Include="Towers\CobraMonkey.cs" />
     <Compile Include="Towers\UnloaderDartling.cs" />
     <Compile Include="Towers\RetroBananaFarm.cs" />
     <Compile Include="Towers\AceGunner.cs" />
@@ -284,6 +286,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PlasmaMonkey2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloonDrain2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloonDrain1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CobraMonkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OffensivePush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonkeyStim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BloonAdjustment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WiredFunds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misdirection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinishHim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Attrition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DoubleTap.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

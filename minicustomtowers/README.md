@@ -34,4 +34,6 @@ Frost Breath (dragons breath but ice, 5 upgrades)
 
 Lightsabre Monkey (btd 4 tier 4 boomerang monkey (thanks mr nuke for textures), no upgrades)
 
+Cobra Monkey (from btd battles, thanks K1d_5h31d0n for some ideas, 8 upgrades (4 top path, 4 bottom path))
+
 Plasma Monkey (from btd x (thanks mr nuke for textures), 5 upgrades)

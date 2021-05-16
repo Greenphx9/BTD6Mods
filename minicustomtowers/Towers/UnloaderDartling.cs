@@ -125,7 +125,7 @@ namespace minicustomtowers.Towers
             towerModel.tiers = new int[] { 0, 0, 0 };
             var attackModel = towerModel.GetAttackModel();
             attackModel.weapons[0].Rate = 2.0f;
-            attackModel.weapons[0].projectile.pierce = 5f;
+            /*attackModel.weapons[0].projectile.pierce = 5f;
             attackModel.weapons[0].emission = new ArcEmissionModel("unloader", 2, 0.0f, 15.0f, null, false, false);
             attackModel.AddWeapon(attackModel.weapons[0].Duplicate<WeaponModel>());
             attackModel.weapons[1].projectile.GetBehavior<TravelStraitModel>().Speed = 325f;
@@ -144,7 +144,34 @@ namespace minicustomtowers.Towers
             attackModel.weapons[5].emission = new ArcEmissionModel("unloader", 7, 0.0f, 15.0f, null, false, false);
             attackModel.AddWeapon(attackModel.weapons[0].Duplicate<WeaponModel>());
             attackModel.weapons[6].projectile.GetBehavior<TravelStraitModel>().Speed = 200f;
-            attackModel.weapons[6].emission = new ArcEmissionModel("unloader", 8, 0.0f, 15.0f, null, false, false);
+            attackModel.weapons[6].emission = new ArcEmissionModel("unloader", 8, 0.0f, 15.0f, null, false, false);*/
+            attackModel.weapons[0].projectile.pierce = 5f;
+            attackModel.weapons[0].emission = new ArcEmissionModel("unloader", 2, 0.0f, 25.0f, null, false, false);
+            attackModel.AddWeapon(attackModel.weapons[0].Duplicate());
+            attackModel.weapons[1].startInCooldown = true;
+            attackModel.weapons[1].customStartCooldown = 0.075f;
+            attackModel.weapons[1].emission = new ArcEmissionModel("unloader", 3, 0.0f, 25.0f, null, false, false);
+            attackModel.AddWeapon(attackModel.weapons[1].Duplicate());
+            attackModel.weapons[2].customStartCooldown = 0.150f;
+            attackModel.weapons[2].emission = new ArcEmissionModel("unloader", 4, 0.0f, 25.0f, null, false, false);
+            attackModel.AddWeapon(attackModel.weapons[1].Duplicate());
+            attackModel.weapons[3].customStartCooldown = 0.225f;
+            attackModel.weapons[3].emission = new ArcEmissionModel("unloader", 5, 0.0f, 25.0f, null, false, false);
+            attackModel.AddWeapon(attackModel.weapons[1].Duplicate());
+            attackModel.weapons[4].customStartCooldown = 0.300f;
+            attackModel.weapons[4].emission = new ArcEmissionModel("unloader", 6, 0.0f, 25.0f, null, false, false);
+            attackModel.AddWeapon(attackModel.weapons[1].Duplicate());
+            attackModel.weapons[5].customStartCooldown = 0.375f;
+            attackModel.weapons[5].emission = new ArcEmissionModel("unloader", 7, 0.0f, 25.0f, null, false, false);
+            attackModel.AddWeapon(attackModel.weapons[1].Duplicate());
+            attackModel.weapons[6].customStartCooldown = 0.450f;
+            attackModel.weapons[6].emission = new ArcEmissionModel("unloader", 8, 0.0f, 25.0f, null, false, false);
+            attackModel.AddWeapon(attackModel.weapons[1].Duplicate());
+            attackModel.weapons[7].customStartCooldown = 0.525f;
+            attackModel.weapons[7].emission = new ArcEmissionModel("unloader", 9, 0.0f, 25.0f, null, false, false);
+            attackModel.AddWeapon(attackModel.weapons[1].Duplicate());
+            attackModel.weapons[8].customStartCooldown = 0.600f;
+            attackModel.weapons[8].emission = new ArcEmissionModel("unloader", 10, 0.0f, 25.0f, null, false, false);
             return towerModel;
         }
 

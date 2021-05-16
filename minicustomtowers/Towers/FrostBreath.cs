@@ -104,11 +104,11 @@ namespace minicustomtowers.Towers
                 };
                 string[] array2 = new string[]
                 {
-                "+1 Dart damage.",
-                "+1 Dart damage, again.",
-                "+Fire-Rate",
-                "Darts are turned into bombs. Bombs can hit blacks/zebras.",
-                "Bombs now stun bloons."
+                "Spits out icy wind faster.",
+                "Wind can now pop leads. Wind pops 3 layers of bloons.",
+                "Wind can now pop all bloon types, except for MOABS. Wind pops 4 layers of bloons.",
+                "Wind is turned into ice. Ice is spit out faster.",
+                "Ice can now hit MOABs, freezing them. Deals extra damage as well."
                 };
 
                 for (int i = 0; i < array.Length; i++)

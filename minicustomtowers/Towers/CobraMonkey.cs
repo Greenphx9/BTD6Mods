@@ -300,7 +300,7 @@ namespace minicustomtowers.Towers
             });
             var attackModel = towerModel.GetAttackModel();
             towerModel.AddBehavior<RateSupportModel>(gameModel.GetTowerFromId("MonkeyVillage-200").GetBehavior<RateSupportModel>().Duplicate());
-            towerModel.GetBehavior<RateSupportModel>().multiplier = 0.75f;
+            towerModel.GetBehavior<RateSupportModel>().multiplier = 0.80f;
             return towerModel;
         }
 

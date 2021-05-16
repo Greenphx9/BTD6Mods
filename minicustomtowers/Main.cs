@@ -31,6 +31,7 @@ using Assets.Scripts.Models.Rounds;
 using Assets.Scripts.Unity.Bridge;
 using Assets.Scripts.Simulation.Towers;
 using Assets.Scripts.Models.TowerSets;
+using BTD_Mod_Helper.Api.InGame_Mod_Options;
 
 namespace minicustomtowers
 {
@@ -76,6 +77,8 @@ namespace minicustomtowers
                 MelonLogger.Msg("Plasma Monkey Loaded");
                 minicustomtowers.Towers.CobraMonkey.Init();
                 MelonLogger.Msg("Cobra Monkey Loaded");
+                minicustomtowers.Towers.PirateCrew.Init();
+                MelonLogger.Msg("Pirate Crew Loaded");
                 CacheBuilder.Build();
                 MelonLogger.Msg("Cache Built");
             }
@@ -102,6 +105,28 @@ namespace minicustomtowers
             bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
             if (inAGame)
             {
+
+            }
+        }
+
+        [HarmonyPatch(typeof(InGame), "Update")]
+        public class Update_Patch
+        {
+            [HarmonyPostfix]
+            public static void Postfix()
+            {
+                if (!(InGame.instance != null && InGame.instance.bridge != null)) return;
+                foreach (var tts in InGame.Bridge.GetAllTowers())
+                {
+
+                    if (!tts.namedMonkeyKey.ToLower().Contains("pirate crew")) continue;
+                    if (tts?.tower?.Node?.graphic?.transform != null)
+                    {
+                        tts.tower.Node.graphic.transform.localScale = new UnityEngine.Vector3(0.5f, 0.5f, 0.5f);
+
+                    }
+
+                }
 
             }
         }

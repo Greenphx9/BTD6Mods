@@ -166,8 +166,17 @@
   <data name="CobraMonkey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>CobraMonkey.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Cutlass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Cutlass.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeckAssistant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>DeckAssistant.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="DoubleTap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>DoubleTap.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FavoredTrades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>FavoredTrades.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="FinishHim" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>FinishHim.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -190,6 +199,9 @@
   <data name="GammaRays" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>GammaRays.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ImprovedMuzzle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ImprovedMuzzle.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="LightSabre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>LightSabre.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -198,6 +210,12 @@
   </data>
   <data name="LightsabreThrower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>LightsabreThrower.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LongerBarrel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>LongerBarrel.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Merchantman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Merchantman.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Misdirection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Misdirection.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -213,6 +231,12 @@
   </data>
   <data name="OperationNevaMiss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>OperationNevaMiss.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PiercingBullets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PiercingBullets.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PirateCrew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PirateCrew.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Plasma0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Plasma0.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -267,6 +291,9 @@
   </data>
   <data name="shader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\shader.bundle;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SharpeyeAssault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SharpeyeAssault.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SolarFlares" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SolarFlares.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

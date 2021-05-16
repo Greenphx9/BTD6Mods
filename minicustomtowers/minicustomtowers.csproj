@@ -131,6 +131,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Towers\BloonDrain.cs" />
+    <Compile Include="Towers\PirateCrew.cs" />
     <Compile Include="Towers\PlasmaMonkey.cs" />
     <Compile Include="Towers\LightsabreThrower.cs" />
     <Compile Include="Towers\FrostBreath.cs" />
@@ -320,8 +321,39 @@
   <ItemGroup>
     <None Include="Resources\DoubleTap.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImprovedMuzzle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Merchantman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FavoredTrades.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LongerBarrel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SharpeyeAssault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeckAssistant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cutlass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PiercingBullets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PirateCrew.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\steamapps\common\BloonsTD6\Mods"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

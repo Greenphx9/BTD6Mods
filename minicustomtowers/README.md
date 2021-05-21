@@ -30,7 +30,7 @@ Unloader Dartling Gunner (btd x left path dartling gunner (sort of like buckshot
 
 Bloontonium Darts (btd x left path dart monkey, 2 upgrades)
 
-Frost Breath (dragons breath but ice, 5 upgrades)
+Frost Breath (dragons breath but ice, (thanks mr nuke for proj textures) 5 upgrades)
 
 Lightsabre Monkey (btd 4 tier 4 boomerang monkey (thanks mr nuke for textures), no upgrades)
 

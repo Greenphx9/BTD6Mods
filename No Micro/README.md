@@ -1,0 +1,1 @@
+Dartling Gunners and Mortars automatically aim at bloons.

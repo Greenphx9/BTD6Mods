@@ -1,0 +1,1 @@
+all projectiles explode after expiring

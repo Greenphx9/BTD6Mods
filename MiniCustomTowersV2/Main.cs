@@ -34,8 +34,8 @@ namespace minicustomtowersv2
             MelonLogger.Msg("Mini Custom Towers loaded!");
 
         }
-        public override string MelonInfoCsURL => "";
-        public override string LatestURL => "";
+        public override string MelonInfoCsURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/MiniCustomTowersV2/Main.cs";
+        public override string LatestURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/MiniCustomTowersV2/minicustomtowersv2.dll?raw=true";
 
         [HarmonyPatch(typeof(TitleScreen), "Start")]
         public class Awake_Patch

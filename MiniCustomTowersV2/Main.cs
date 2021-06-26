@@ -21,7 +21,7 @@ using BTD_Mod_Helper.Api.Towers;
 using Assets.Scripts.Unity.UI_New.InGame.StoreMenu;
 using UnityEngine.UI;
 using BTD_Mod_Helper.Extensions;
-[assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.1", "Greenphx")]
+[assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.2", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace minicustomtowersv2
@@ -32,9 +32,8 @@ namespace minicustomtowersv2
         public override void OnApplicationStart()
         {
             MelonLogger.Msg("Mini Custom Towers loaded!");
-
         }
-        public override string MelonInfoCsURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/MiniCustomTowersV2/Main.cs";
+        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/Greenphx9/BTD6Mods/main/MiniCustomTowersV2/Main.cs";
         public override string LatestURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/MiniCustomTowersV2/minicustomtowersv2.dll?raw=true";
 
         [HarmonyPatch(typeof(TitleScreen), "Start")]
@@ -46,6 +45,7 @@ namespace minicustomtowersv2
 
             }
         }
+        public override string IDPrefix => "MiniCustomTowers_V2_";
         public override void OnUpdate()
         {
             base.OnUpdate();
@@ -107,7 +107,7 @@ namespace minicustomtowersv2
             {
                 var texture2D = ModContent.GetTexture<Main>("TowerContainerCustom");
                 //var sprite = Sprite.Create(texture2D, new UnityEngine.Rect(0, 0, texture2D.width, texture2D.height), default(Vector2), 100f, 0U, SpriteMeshType.Tight);
-                if(towerModel.baseId.Contains("minicustomtowersv2"))
+                if(towerModel.baseId.Contains("MiniCustomTowers_V2"))
                 {
                     __instance.SetBackground(texture2D);
                 }

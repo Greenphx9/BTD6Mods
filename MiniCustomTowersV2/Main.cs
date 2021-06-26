@@ -21,7 +21,7 @@ using BTD_Mod_Helper.Api.Towers;
 using Assets.Scripts.Unity.UI_New.InGame.StoreMenu;
 using UnityEngine.UI;
 using BTD_Mod_Helper.Extensions;
-[assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.0", "Greenphx")]
+[assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.1", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace minicustomtowersv2

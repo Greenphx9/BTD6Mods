@@ -1,0 +1,7 @@
+D:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods\minicustomtowersv2.dll
+D:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods\minicustomtowersv2.pdb
+D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.csprojAssemblyReference.cache
+D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.csproj.CoreCompileInputs.cache
+D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.csproj.CopyComplete
+D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.dll
+D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.pdb

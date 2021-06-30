@@ -1,0 +1,1 @@
+Every projectile shot out is random

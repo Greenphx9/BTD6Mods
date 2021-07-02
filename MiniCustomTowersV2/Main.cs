@@ -23,7 +23,7 @@ using UnityEngine.UI;
 using BTD_Mod_Helper.Extensions;
 using Assets.Scripts.Unity.UI_New.InGame.TowerSelectionMenu.TowerSelectionMenuThemes;
 
-[assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.2", "Greenphx")]
+[assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.3", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace minicustomtowersv2

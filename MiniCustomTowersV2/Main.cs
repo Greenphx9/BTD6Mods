@@ -21,6 +21,8 @@ using BTD_Mod_Helper.Api.Towers;
 using Assets.Scripts.Unity.UI_New.InGame.StoreMenu;
 using UnityEngine.UI;
 using BTD_Mod_Helper.Extensions;
+using Assets.Scripts.Unity.UI_New.InGame.TowerSelectionMenu.TowerSelectionMenuThemes;
+
 [assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.2", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
@@ -113,6 +115,22 @@ namespace minicustomtowersv2
                 }
                 
                 return true;
+            }
+        }
+        [HarmonyPatch(typeof(TSMThemeDefault), nameof(TSMThemeAmbidextrousRangs.UpdateFromSimInfo))]
+        [HarmonyPatch]
+        public class TSMTheme_Patch
+        {
+
+            [HarmonyPostfix]
+            public static void Postfix(TSMThemeAmbidextrousRangs __instance, TowerToSimulation tower)
+            {
+                var texture2D = ModContent.GetTexture<Main>("TowerContainerCustom");
+                var sprite = Sprite.Create(texture2D, new UnityEngine.Rect(0, 0, texture2D.width, texture2D.height), default(Vector2), 100f, 0U, SpriteMeshType.Tight);
+                if (tower.tower.towerModel.baseId.Contains("MiniCustomTowers_V2"))
+                {
+                    __instance.towerBackgroundImage.sprite = sprite;
+                }
             }
         }
     }

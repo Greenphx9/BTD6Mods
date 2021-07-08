@@ -1,0 +1,1 @@
+A modified version of custom maps. Press F10 in-game to remove all medals from the old custom maps that used to unlock all medals.

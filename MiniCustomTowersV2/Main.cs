@@ -37,16 +37,6 @@ namespace minicustomtowersv2
         }
         public override string MelonInfoCsURL => "https://raw.githubusercontent.com/Greenphx9/BTD6Mods/main/MiniCustomTowersV2/Main.cs";
         public override string LatestURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/MiniCustomTowersV2/minicustomtowersv2.dll?raw=true";
-
-        [HarmonyPatch(typeof(TitleScreen), "Start")]
-        public class Awake_Patch
-        {
-            [HarmonyPostfix]
-            public static void Postfix()
-            {
-
-            }
-        }
         public override string IDPrefix => "MiniCustomTowers_V2_";
         public override void OnUpdate()
         {
@@ -117,7 +107,7 @@ namespace minicustomtowersv2
                 return true;
             }
         }
-        [HarmonyPatch(typeof(TSMThemeDefault), nameof(TSMThemeAmbidextrousRangs.UpdateFromSimInfo))]
+        /*[HarmonyPatch(typeof(TSMThemeDefault), nameof(TSMThemeAmbidextrousRangs.UpdateFromSimInfo))]
         [HarmonyPatch]
         public class TSMTheme_Patch
         {
@@ -132,7 +122,7 @@ namespace minicustomtowersv2
                     __instance.towerBackgroundImage.sprite = sprite;
                 }
             }
-        }
+        }*/
     }
 
 }

@@ -464,6 +464,7 @@
   <ItemGroup>
     <EmbeddedResource Include="TowerImg\GuidedMissileLauncher\PropertyRemovingMissiles_Icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\steamapps\common\BloonsTD6\Mods"

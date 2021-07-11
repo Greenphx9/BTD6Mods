@@ -22,13 +22,20 @@ using Assets.Scripts.Unity.UI_New.InGame.StoreMenu;
 using UnityEngine.UI;
 using BTD_Mod_Helper.Extensions;
 using Assets.Scripts.Unity.UI_New.InGame.TowerSelectionMenu.TowerSelectionMenuThemes;
+using System.Collections.Generic;
+using Assets.Scripts.Simulation.Towers;
+using Assets.Scripts.Models.Towers.Projectiles.Behaviors;
+using Assets.Scripts.Simulation.Objects;
+using Assets.Scripts.Models;
+using Assets.Scripts.Models.Towers.Behaviors.Attack;
+using System.Reflection;
 
 [assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.3", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace minicustomtowersv2
 {
-    public class Main : BloonsMod
+    public class Main : BloonsTD6Mod
     {
 
         public override void OnApplicationStart()
@@ -54,6 +61,7 @@ namespace minicustomtowersv2
                             tts.tower.display.scaleOffset = new Assets.Scripts.Simulation.SMath.Vector3(0.5f, 0.5f, 0.5f);
                         }
                     }
+                    
                 }
                 catch
                 {
@@ -91,9 +99,13 @@ namespace minicustomtowersv2
             return myTexture2D;
         }
 
-        [HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.SetTower))]
+        [HarmonyPatch]
         private class SetTower
         {
+            static IEnumerable<MethodBase> TargetMethods()
+            {
+                yield return typeof(StandardTowerPurchaseButton).GetMethod(nameof(StandardTowerPurchaseButton.SetTower));
+            }
             [HarmonyPrefix]
             internal static bool Fix(ref StandardTowerPurchaseButton __instance, ref TowerModel towerModel, ref bool showTowerCount, ref bool hero, ref int buttonIndex)
             {

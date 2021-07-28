@@ -216,6 +216,7 @@ namespace minicustomtowersv2
             {
                 var attackModel = towerModel.GetAttackModel();
                 towerModel.AddBehavior(Game.instance.model.GetTowerFromId("BoomerangMonkey-040").GetAbility().Duplicate());
+                towerModel.GetAbility().name = "Missile Overload";
                 towerModel.GetAbility().GetBehavior<TurboModel>().extraDamage += 1;
                 towerModel.GetAbility().GetBehavior<TurboModel>().multiplier /= 2;
                 towerModel.GetAbility().GetBehavior<TurboModel>().projectileDisplay.assetPath = "MiniCustomTowers_V2_GuidedMissileDisplay";

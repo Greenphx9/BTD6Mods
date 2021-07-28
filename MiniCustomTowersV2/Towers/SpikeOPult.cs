@@ -195,6 +195,7 @@ namespace minicustomtowersv2
                 attackModel.weapons[0].projectile.GetDamageModel().damage += 4f;
                 towerModel.AddBehavior(Game.instance.model.GetTowerFromId("TackShooter-040").GetBehavior<AbilityModel>().Duplicate());
                 towerModel.GetBehavior<AbilityModel>().icon = GetSpriteReference(mod, "Juggerlanche_Icon");
+                towerModel.GetAbility().name = "Juggerlanche";
                 var activateAttack = towerModel.GetBehavior<AbilityModel>().GetBehavior<ActivateAttackModel>();
                 activateAttack.attacks[0].weapons[0].projectile = towerModel.GetWeapon().projectile.Duplicate();
             }

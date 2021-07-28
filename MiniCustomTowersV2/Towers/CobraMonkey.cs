@@ -130,6 +130,7 @@ namespace minicustomtowersv2
                 c2a.lifespanFrames /= 2;
                 c2a.lifespan /= 2;
                 towerModel.GetBehavior<AbilityModel>().icon = GetSpriteReference(mod, "MonkeyStim_Icon");
+                towerModel.GetBehavior<AbilityModel>().maxActivationsPerRound = 1;
                 towerModel.GetBehavior<AbilityModel>().RemoveBehavior<CreateEffectOnAbilityModel>();
                 towerModel.GetBehavior<AbilityModel>().RemoveBehavior<CreateSoundOnAbilityModel>();
                 towerModel.GetAttackModel().weapons[0].Rate *= 0.75f;
@@ -236,11 +237,13 @@ namespace minicustomtowersv2
                     {
                         abilityModel.icon = GetSpriteReference(mod, "Misdirection_Icon");
                         abilityModel.RemoveBehavior<CreateSoundOnAbilityModel>();
+                        abilityModel.name = "Misdirection";
                         abilityModel.RemoveBehavior<CreateEffectOnAbilityModel>();
                         var attackAbil = abilityModel.GetBehavior<ActivateAttackModel>();
                         attackAbil.attacks[0].range = 1000f;
                         attackAbil.attacks[0].weapons[0] = Game.instance.model.GetTowerFromId("DartMonkey").GetWeapon().Duplicate();
                         attackAbil.attacks[0].weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("NinjaMonkey-020").GetWeapon().projectile.GetBehavior<WindModel>().Duplicate());
+                        attackAbil.attacks[0].weapons[0].emission = new InstantDamageEmissionModel("InstantDamageEmissionModel_", null);
                         var wind = attackAbil.attacks[0].weapons[0].projectile.GetBehavior<WindModel>();
                         wind.affectMoab = true;
                         wind.chance = 100f;
@@ -253,6 +256,7 @@ namespace minicustomtowersv2
                         attackAbil.attacks[0].RemoveBehavior<TargetFirstModel>();
                         attackAbil.attacks[0].RemoveBehavior<TargetLastModel>();
                         attackAbil.attacks[0].RemoveBehavior<TargetCloseModel>();
+                        var proj = attackAbil.attacks[0].weapons[0].projectile.Duplicate();
                     }
                 }
             }

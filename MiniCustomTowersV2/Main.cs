@@ -29,6 +29,7 @@ using Assets.Scripts.Simulation.Objects;
 using Assets.Scripts.Models;
 using Assets.Scripts.Models.Towers.Behaviors.Attack;
 using System.Reflection;
+using Assets.Scripts.Simulation.Towers.Behaviors.Abilities;
 
 [assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.3", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -61,7 +62,7 @@ namespace minicustomtowersv2
                             tts.tower.display.scaleOffset = new Assets.Scripts.Simulation.SMath.Vector3(0.5f, 0.5f, 0.5f);
                         }
                     }
-                    
+
                 }
                 catch
                 {
@@ -99,23 +100,19 @@ namespace minicustomtowersv2
             return myTexture2D;
         }
 
-        [HarmonyPatch]
+        [HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.SetTower))]
         private class SetTower
         {
-            static IEnumerable<MethodBase> TargetMethods()
-            {
-                yield return typeof(StandardTowerPurchaseButton).GetMethod(nameof(StandardTowerPurchaseButton.SetTower));
-            }
             [HarmonyPrefix]
             internal static bool Fix(ref StandardTowerPurchaseButton __instance, ref TowerModel towerModel, ref bool showTowerCount, ref bool hero, ref int buttonIndex)
             {
                 var texture2D = ModContent.GetTexture<Main>("TowerContainerCustom");
                 //var sprite = Sprite.Create(texture2D, new UnityEngine.Rect(0, 0, texture2D.width, texture2D.height), default(Vector2), 100f, 0U, SpriteMeshType.Tight);
-                if(towerModel.baseId.Contains("MiniCustomTowers_V2"))
+                if (towerModel.baseId.Contains("MiniCustomTowers_V2"))
                 {
                     __instance.SetBackground(texture2D);
                 }
-                
+
                 return true;
             }
         }

@@ -1,0 +1,1 @@
+Adds sub-towers (sentries, marine, mini sun avatar) and other towers (apex plasma master, glaive dominus) to the shop. You can disable/enable any towers from the Mod Settings menu (Settings then Mod Settings)

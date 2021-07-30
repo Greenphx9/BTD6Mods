@@ -1,1 +1,0 @@
-Adds sentries to the shop. They never expire/sell. Sentries from the engineer gunner will sell though.

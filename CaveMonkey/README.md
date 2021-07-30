@@ -1,1 +1,0 @@
-not balanced & art is ugly. but play if you really want to

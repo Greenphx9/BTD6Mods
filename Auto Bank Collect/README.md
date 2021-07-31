@@ -1,0 +1,1 @@
+Automatically collects banks when they are full.

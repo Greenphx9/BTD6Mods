@@ -1,5 +1,5 @@
 ﻿using MelonLoader;
-using Harmony;
+using HarmonyLib;
 
 using Assets.Scripts.Unity.UI_New.InGame;
 using Assets.Main.Scenes;
@@ -30,6 +30,7 @@ using Assets.Scripts.Models;
 using Assets.Scripts.Models.Towers.Behaviors.Attack;
 using System.Reflection;
 using Assets.Scripts.Simulation.Towers.Behaviors.Abilities;
+using Assets.Scripts.Unity.UI_New.InGame.RightMenu;
 
 [assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.3", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -99,23 +100,65 @@ namespace minicustomtowersv2
             RenderTexture.ReleaseTemporary(tmp);
             return myTexture2D;
         }
-
-        [HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.SetTower))]
-        private class SetTower
+        //Had to remove (for now)
+        /*[HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.SetTower))]
+        public class SetTower
         {
             [HarmonyPrefix]
-            internal static bool Fix(ref StandardTowerPurchaseButton __instance, ref TowerModel towerModel, ref bool showTowerCount, ref bool hero, ref int buttonIndex)
+            internal static bool Prefix(ref StandardTowerPurchaseButton __instance, ref ShopMenu shopMenu, ref TowerModel towerModel, ref bool showTowerCount, ref bool hero, ref int buttonIndex)
             {
-                var texture2D = ModContent.GetTexture<Main>("TowerContainerCustom");
-                //var sprite = Sprite.Create(texture2D, new UnityEngine.Rect(0, 0, texture2D.width, texture2D.height), default(Vector2), 100f, 0U, SpriteMeshType.Tight);
-                if (towerModel.baseId.Contains("MiniCustomTowers_V2"))
+                __instance.bg = __instance.gameObject.GetComponent<Image>();
+                if (towerModel.baseId == "MiscTowersInShop-Sentry ")
                 {
-                    __instance.SetBackground(texture2D);
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerGreen"));
                 }
-
+                if (towerModel.baseId == "MiscTowersInShop-BoomSentry")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBlack"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-ColdSentry")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBlue"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-CrushingSentry")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerRed"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-EnergySentry")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerYellow"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-ParagonSentry")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerParagon"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-MiniSunAvatar")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerYellow"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-Marine")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBlack"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-CaveMonkey")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBrown"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-TransformedMonkey")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBluePurple"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-ApexPlasmaMaster")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerParagon"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-GlaiveDominus")
+                {
+                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerParagon"));
+                }
                 return true;
             }
-        }
+        }*/
         /*[HarmonyPatch(typeof(TSMThemeDefault), nameof(TSMThemeAmbidextrousRangs.UpdateFromSimInfo))]
         [HarmonyPatch]
         public class TSMTheme_Patch

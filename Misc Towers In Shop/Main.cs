@@ -423,7 +423,7 @@ namespace MiscTowersInShop
             base.OnUpdate();
             
         }
-        [HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.SetTower))]
+        /*[HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.SetTower))]
         public class SetTower
         {
             [HarmonyPrefix]
@@ -480,7 +480,7 @@ namespace MiscTowersInShop
                 }
                 return true;
             }
-        }
+        }*/
         public static void TrySaveToPNG(Texture texture, string filePath)
         {
             try

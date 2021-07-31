@@ -1,5 +1,5 @@
 ﻿using MelonLoader;
-using Harmony;
+using HarmonyLib;
 
 using Assets.Scripts.Unity.UI_New.InGame;
 
@@ -34,25 +34,24 @@ using BTD_Mod_Helper.Api.ModOptions;
 using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api;
 using Assets.Scripts.Models.Towers.Upgrades;
-using Assets.Scripts.Unity.Localization;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Api.Display;
 using Assets.Scripts.Unity.Display;
 using Assets.Scripts.Models.Map;
 using Assets.Scripts.Simulation.Towers;
 using Assets.Scripts.Unity.Display.Animation;
-using TMPro;
 using UnityEngine.Rendering;
 using Assets.Scripts.Models.Towers.Filters;
+using Assets.Scripts.Models.TowerSets;
 
 namespace SeaMonkey
 {
     public class Main : BloonsTD6Mod
     {
-        //public static AssetBundle assetBundle = null;
+       // public static AssetBundle assetBundle = null;
         public override void OnApplicationStart()
         {
-            //assetBundle = AssetBundle.LoadFromMemory(Resource1.shaders); Unused (currently)
+            //assetBundle = AssetBundle.LoadFromMemory(Resource1.shaders);
             MelonLogger.Msg("Sea Monkey loaded!");
         }
         public class SeaMonkey : ModTower
@@ -77,6 +76,7 @@ namespace SeaMonkey
                 towerModel.areaTypes = areaTypes;
                 towerModel.areaTypes[0] = AreaType.land;
                 towerModel.areaTypes[1] = AreaType.water;
+                
                 
             }
             public override string Icon => "SeaMonkey_Icon";
@@ -431,6 +431,7 @@ namespace SeaMonkey
             public override string Icon => Name + "_Icon";
             public override string Portrait => Name + "_Portrait";
         }
+        public static Assets.Scripts.Simulation.SMath.Vector2 pos;
         public override string IDPrefix => "SeaMonkey_";
         public override void OnUpdate()
         {
@@ -439,5 +440,22 @@ namespace SeaMonkey
             {
             }
         }
+        public static Texture2D textureFromSprite(Sprite sprite)
+        {
+            if (sprite.rect.width != sprite.texture.width)
+            {
+                Texture2D newText = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height);
+                Color[] newColors = sprite.texture.GetPixels((int)sprite.textureRect.x,
+                                                             (int)sprite.textureRect.y,
+                                                             (int)sprite.textureRect.width,
+                                                             (int)sprite.textureRect.height);
+                newText.SetPixels(newColors);
+                newText.Apply();
+                return newText;
+            }
+            else
+                return sprite.texture;
+        }
+
     }
 }

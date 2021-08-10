@@ -4,4 +4,3 @@ D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicust
 D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.csproj.CopyComplete
 D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.dll
 D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.pdb
-D:\Windows Stuff\Documents\GitHub\BTD6Mods\MiniCustomTowersV2\obj\Debug\minicustomtowersv2.csprojAssemblyReference.cache

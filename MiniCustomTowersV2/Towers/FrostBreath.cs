@@ -73,7 +73,8 @@ namespace minicustomtowersv2
             public override string BaseDisplay => "ac12ead67e1228b49b74153614039736";
             public override void ModifyDisplayNode(UnityDisplayNode node)
             {
-                node.genericRenderers[1].material.mainTexture = GetTexture(mod, "FrostBreathDisplay");
+                //node.genericRenderers[1].material.mainTexture = GetTexture(mod, "FrostBreathDisplay");
+                node.GetRenderers<SkinnedMeshRenderer>()[0].material.mainTexture = GetTexture(mod, "FrostBreathDisplay");
             }
         }
         public class FrostBreathBlue : ModDisplay

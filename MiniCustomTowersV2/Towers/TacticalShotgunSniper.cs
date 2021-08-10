@@ -58,6 +58,7 @@ namespace minicustomtowersv2
                 attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().damage = 6.0f;
                 attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().maxDamage = 6.0f;
                 attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().CapDamage(6.0f);
+                attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.SetHitCamo(true);
             }
             public override string Portrait => "TacticalShotgunSniper_Icon";
             public override string Icon => "TacticalShotgunSniper_Icon";
@@ -67,7 +68,8 @@ namespace minicustomtowersv2
             public override string BaseDisplay => "9a88e6fa97600b148b7439b48cab222e";
             public override void ModifyDisplayNode(UnityDisplayNode node)
             {
-                node.genericRenderers[2].material.mainTexture = GetTexture(mod, "TacticalShotgunSniperDisplay");
+                //node.GetRenderers<SkinnedMeshRenderer>()[0].material.mainTexture = GetTexture(mod, "TacticalShotgunSniperDisplay");
+                node.GetRenderers<SkinnedMeshRenderer>()[1].material.mainTexture = GetTexture(mod, "TacticalShotgunSniperDisplay");
             }
         }
         public class Bloonzooka : ModUpgrade<TacticalShotgunSniper>
@@ -86,6 +88,7 @@ namespace minicustomtowersv2
                 attackModel.weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("BombShooter-300").GetAttackModel().weapons[0].projectile.GetBehavior<CreateEffectOnContactModel>().Duplicate());
                 attackModel.weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("BombShooter-300").GetAttackModel().weapons[0].projectile.GetBehavior<CreateSoundOnProjectileCollisionModel>().Duplicate());
                 attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().damage = 4.0f;
+                attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.SetHitCamo(true);
             }
             public override string Icon => "Bloonzooka_Icon";
         }

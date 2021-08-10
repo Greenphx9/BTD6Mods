@@ -148,6 +148,7 @@ namespace minicustomtowersv2
             public override void ModifyDisplayNode(UnityDisplayNode node)
             {
                 SetMeshTexture(node, "BatMonkey4Display");
+                //node.GetRenderer<SkinnedMeshRenderer>().material.mainTexture.TrySaveToPNG(@"Mods/" + node.GetRenderer<SkinnedMeshRenderer>().material.mainTexture.name + ".png");
             }
         }
         public class EnergyBatarangDisplay : ModDisplay

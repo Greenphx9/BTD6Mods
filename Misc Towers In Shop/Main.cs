@@ -1,5 +1,5 @@
 ﻿using MelonLoader;
-using Harmony;
+using HarmonyLib;
 
 using Assets.Scripts.Unity.UI_New.InGame;
 
@@ -60,37 +60,37 @@ namespace MiscTowersInShop
         }
         public static ModSettingBool Sentries = new ModSettingBool(true)
         {
-            isButton = false,
+            IsButton = false,
             displayName = "Sentries"
         };
         public static ModSettingBool MiniSunAvatarEnabled = new ModSettingBool(true)
         {
-            isButton = false,
+            IsButton = false,
             displayName = "Mini Sun Avatar"
         };
         public static ModSettingBool MarineEnabled = new ModSettingBool(true)
         {
-            isButton = false,
+            IsButton = false,
             displayName = "Marine"
         };
         public static ModSettingBool CaveMonkeyEnabled = new ModSettingBool(true)
         {
-            isButton = false,
+            IsButton = false,
             displayName = "Cave Monkey"
         };
         public static ModSettingBool TransformedMonkeyEnabled = new ModSettingBool(true)
         {
-            isButton = false,
+            IsButton = false,
             displayName = "Transformed Monkey"
         };
         public static ModSettingBool ApexPlasmaMasterEnabled = new ModSettingBool(true)
         {
-            isButton = false,
+            IsButton = false,
             displayName = "Apex Plasma Master"
         };
         public static ModSettingBool GlaiveDominusEnabled = new ModSettingBool(true)
         {
-            isButton = false,
+            IsButton = false,
             displayName = "Glaive Dominus"
         };
         public class Sentry : ModTower
@@ -379,6 +379,8 @@ namespace MiscTowersInShop
             public override void ModifyBaseTowerModel(TowerModel towerModel)
             {
                 towerModel.icon = towerModel.portrait = Game.instance.model.GetTowerFromId("DartMonkey-Paragon").portrait;
+                towerModel.isParagon = false;
+                towerModel.dontDisplayUpgrades = true;
             }
             public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
             {
@@ -403,6 +405,8 @@ namespace MiscTowersInShop
             public override void ModifyBaseTowerModel(TowerModel towerModel)
             {
                 towerModel.icon = towerModel.portrait = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").portrait;
+                towerModel.isParagon = false;
+                towerModel.dontDisplayUpgrades = true;
             }
             public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
             {
@@ -423,64 +427,75 @@ namespace MiscTowersInShop
             base.OnUpdate();
             
         }
-        /*[HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.SetTower))]
+        [HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.UpdateIcon))]
         public class SetTower
         {
             [HarmonyPrefix]
-            internal static bool Prefix(ref StandardTowerPurchaseButton __instance, ref ShopMenu shopMenu, ref TowerModel towerModel, ref bool showTowerCount, ref bool hero, ref int buttonIndex)
+            internal static bool Prefix(StandardTowerPurchaseButton __instance) //ref ShopMenu shopMenu, ref TowerModel towerModel
             {
                 __instance.bg = __instance.gameObject.GetComponent<Image>();
+                var towerModel = __instance.baseTowerModel;
                 if(towerModel.baseId == "MiscTowersInShop-Sentry ")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerGreen"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerGreen"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-BoomSentry")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBlack"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerBlack"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-ColdSentry")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBlue"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerBlue"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-CrushingSentry")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerRed"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerRed"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-EnergySentry")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerYellow"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerYellow"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-ParagonSentry")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerParagon"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerParagon"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-MiniSunAvatar")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerYellow"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerYellow"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-Marine")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBlack"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerBlack"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-CaveMonkey")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBrown"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerBrown"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-TransformedMonkey")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerBluePurple"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerBluePurple"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-ApexPlasmaMaster")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerParagon"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerParagon"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-GlaiveDominus")
                 {
-                    __instance.SetBackground(ModContent.GetSprite<Main>("TowerContainerParagon"));
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerParagon"));
                 }
                 return true;
             }
-        }*/
+        }
+        [HarmonyPatch(typeof(TowerImageLoader), nameof(TowerImageLoader.Load))]
+        public class LoadTowerImageLoader
+        {
+            [HarmonyPrefix]
+            internal static bool Prefix(TowerImageLoader __instance, ref string towerID)
+            {
+                __instance.bg.sprite = ModContent.GetSprite<Main>("TowerContainerBlack");
+                return true;
+            }
+        }
         public static void TrySaveToPNG(Texture texture, string filePath)
         {
             try

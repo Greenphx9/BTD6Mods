@@ -7,8 +7,8 @@
     <ProjectGuid>{79C877BD-1FE0-4518-91EA-DD88B4942846}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SeaMonkey</RootNamespace>
-    <AssemblyName>SeaMonkey</AssemblyName>
+    <RootNamespace>SeaMonkeyGreenphx</RootNamespace>
+    <AssemblyName>SeaMonkeyGreenphx</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource1.resx" />
+    <Compile Include="Ext.cs" />
     <Compile Include="Resource1.Designer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -200,6 +201,12 @@
   <ItemGroup>
     <EmbeddedResource Include="TowerIMG\BottomPath\OceanicCommander_Icon.png" />
     <EmbeddedResource Include="TowerIMG\BottomPath\OceanicCommander_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Flask_Red 0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\CrateDiffuse.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

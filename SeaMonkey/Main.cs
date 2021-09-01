@@ -44,7 +44,7 @@ using UnityEngine.Rendering;
 using Assets.Scripts.Models.Towers.Filters;
 using Assets.Scripts.Models.TowerSets;
 
-namespace SeaMonkey
+namespace SeaMonkeyGreenphx
 {
     public class Main : BloonsTD6Mod
     {
@@ -56,7 +56,7 @@ namespace SeaMonkey
         }
         public class SeaMonkey : ModTower
         {
-            public override string Name => "SeaMonkey";
+            public override string Name => "SeaMonkeyGreenphx";
             public override string DisplayName => "Sea Monkey";
             public override string Description => "Launches balls of water at the bloons to pop them.";
             public override string BaseTower => "DartMonkey-002";
@@ -78,6 +78,10 @@ namespace SeaMonkey
                 towerModel.areaTypes[1] = AreaType.water;
                 
                 
+            }
+            public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+            {
+                return Game.instance.model.GetTowerFromId("Druid").GetTowerSetIndex() + 1;
             }
             public override string Icon => "SeaMonkey_Icon";
             public override string Portrait => "SeaMonkey_Icon";

@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79C877BD-1FE0-4518-91EA-DD88B4942846}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KingdomRushTowers</RootNamespace>
+    <AssemblyName>KingdomRushTowers</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\BloonsTD6\Mods\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BloonsTD6 Mod Helper, Version=2.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MelonLoader, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\MelonLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="NinjaKiwi.Common, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\NinjaKiwi.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NinjaKiwi.LiNK, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\NinjaKiwi.LiNK.dll</HintPath>
+    </Reference>
+    <Reference Include="NKHook6">
+      <HintPath>..\..\..\NKHook6.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NKHook6 %284%29, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\Mods\NKHook6 (4).dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnhollowerBaseLib">
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
+    </Reference>
+    <Reference Include="UnhollowerRuntimeLib">
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnhollowerRuntimeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.Addressables.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.Compat.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.ResourceManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=3.7.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>D:\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Towers\MageTower.cs" />
+    <Compile Include="Towers\DwarvenBombard.cs" />
+    <Compile Include="Towers\MilitiaBarracks.cs" />
+    <Compile Include="Towers\ArcherTower.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\ArcherTowerDisplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\ArcherTower_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\TowerContainerKingdomRush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\UpgradeIconKR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\MarksmenTower_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\MarksmenTowerDisplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\SharpshooterTowerDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Archer\SharpshooterTower_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\RangersHideoutDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Archer\RangersHideout_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\PoisonArrows_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\PoisonArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\WrathOfTheForest_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\MusketeerGarrisonDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Archer\MusketeerGarrison_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\SniperShot_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Archer\ShrapnelShot_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\BarrackDefender0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\MilitiaBarracksDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Militia\MilitiaBarracks_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\FootmenBarracksDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Militia\FootmenBarracks_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\BarrackDefender1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\KnightsBarracksDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Militia\KnightsBarracks_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\BarrackDefender2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\BarrackDefender3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\HolyOrderDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Militia\HolyOrder_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\ShieldOfValor_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\BarrackDefender4.png" />
+    <EmbeddedResource Include="TowerIMG\Militia\HolyStrike_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\BarbarianMeadHallDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Militia\BarbarianMeadHall_Portrait.png" />
+    <EmbeddedResource Include="TowerIMG\Militia\BarrackDefender5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\WhirlwindAttack_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Militia\BarrackDefender6.png" />
+    <EmbeddedResource Include="TowerIMG\Militia\MoreAxes_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\MageTowerDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Mage\MageTower_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\AdeptTowerDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Mage\AdeptTower_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\WizardTowerDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Mage\WizardTower_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\ArcaneWizardDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Mage\ArcaneWizard_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\DeathRay_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\Teleport_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\SorcererMageDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Mage\SorcererMage_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\Polymorph_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\SheepBloon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\SummonElemental_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Mage\Elemental.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\DwarvenBombardDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\DwarvenBombard_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\DwarvenArtilleryDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\DwarvenArtillery_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\DwarvenHowitzerDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\DwarvenHowitzer_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\500mmBigBerthaDisplay.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\500mmBigBertha_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\DragonbreathLauncher_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\ClusterLauncherXtreme_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\Teslax104Display.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\Teslax104_Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning1.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning2.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning3.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning5.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning6.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning7.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning8.png" />
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\Lightning4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\Overcharge_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TowerIMG\Dwarven\SuperchargedBolt_Icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\steamapps\common\BloonsTD6\Mods"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

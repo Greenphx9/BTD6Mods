@@ -32,7 +32,7 @@ using System.Reflection;
 using Assets.Scripts.Simulation.Towers.Behaviors.Abilities;
 using Assets.Scripts.Unity.UI_New.InGame.RightMenu;
 
-[assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.3", "Greenphx")]
+[assembly: MelonInfo(typeof(minicustomtowersv2.Main), "Mini Custom Towers", "1.0.4", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace minicustomtowersv2

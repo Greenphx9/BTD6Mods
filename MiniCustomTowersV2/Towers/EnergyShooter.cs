@@ -134,7 +134,7 @@ namespace minicustomtowersv2
             public override string Icon => "DoubleEnergy_Icon";
             public override void ApplyUpgrade(TowerModel towerModel)
             {
-                towerModel.GetAttackModel().weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 2, 0.0f, 20.0f, null, false, false);
+                towerModel.GetAttackModel().weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 2, 0.0f, 20.0f, null, false);
                 towerModel.GetAttackModel().weapons[0].projectile.pierce += 2.0f;
             }
         }

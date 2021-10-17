@@ -105,7 +105,7 @@ namespace minicustomtowersv2
                         attackModel.range = 500f;
                         attackModel.weapons[0].Rate = 15f;
                         attackModel.weapons[0].projectile.GetDamageModel().damage = 5f;
-                        attackModel.weapons[0].projectile.AddBehavior(new RemoveBloonModifiersModel("bloonadjust", true, true, false, true, false, new Il2CppStringArray(0)));
+                        attackModel.weapons[0].projectile.AddBehavior(new RemoveBloonModifiersModel("bloonadjust", true, true, false, true, false, new Il2CppStringArray(0).ToIl2CppList()));
                         towerModel.AddBehavior(new OverrideCamoDetectionModel("bloonadjust1", true));
 
                     }

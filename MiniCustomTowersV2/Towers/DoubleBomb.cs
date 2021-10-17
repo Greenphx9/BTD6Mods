@@ -83,7 +83,7 @@ namespace minicustomtowersv2
             public override void ApplyUpgrade(TowerModel towerModel)
             {
                 var attackModel = towerModel.GetAttackModel();
-                attackModel.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 5, 0.0f, 72.0f, null, false, false);
+                attackModel.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 5, 0.0f, 72.0f, null, false);
                 attackModel.weapons[0].GetBehavior<AlternateProjectileModel>().emissionModel = attackModel.weapons[0].emission;
             }
         }

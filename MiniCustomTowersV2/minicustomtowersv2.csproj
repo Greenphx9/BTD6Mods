@@ -457,13 +457,13 @@
     <EmbeddedResource Include="TowerImg\GuidedMissileLauncher\PropertyRemovingMissiles_Icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="TowerImg\BatMonkey\BatMonkey4Display.png" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="TowerImg\TacticalShotgunSniper\TacticalShotgunSniperDisplay.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TowerImg\FrostBreath\FrostBreathDisplay.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TowerImg\BatMonkey\BatMonkey4Display.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

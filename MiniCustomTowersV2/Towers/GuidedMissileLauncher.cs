@@ -136,7 +136,7 @@ namespace minicustomtowersv2
             {
                 var attackModel = towerModel.GetAttackModel();
                 var proj = attackModel.weapons[0].projectile.Duplicate();
-                attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_", proj, new ArcEmissionModel("ArcEmissionModel_", 8, 0.0f, 360.0f, null, false, false), true, false, false));
+                attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_", proj, new ArcEmissionModel("ArcEmissionModel_", 8, 0.0f, 360.0f, null, false), true, false, false));
                 attackModel.weapons[0].projectile.GetBehaviors<CreateProjectileOnContactModel>()[1].projectile.RemoveBehavior<TrackTargetModel>();
             }
             public override string Icon => "ClusterMissiles_Icon";

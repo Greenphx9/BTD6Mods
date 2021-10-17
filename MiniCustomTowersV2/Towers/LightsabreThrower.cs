@@ -87,7 +87,7 @@ namespace minicustomtowersv2
             public override string Icon => "DoubleLightsabre_Icon";
             public override void ApplyUpgrade(TowerModel tower)
             {
-                tower.GetAttackModel().weapons[0].emission = new ArcEmissionModel("Double Lightsabre", 2, 0.0f, 15.0f, null, false, false);
+                tower.GetAttackModel().weapons[0].emission = new ArcEmissionModel("Double Lightsabre", 2, 0.0f, 15.0f, null, false);
             }
         }
     }

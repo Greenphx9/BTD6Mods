@@ -141,7 +141,7 @@ namespace minicustomtowersv2
                 {
                     if (createProj.projectile.id.Contains("Frag"))
                     {
-                        attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnExhaustFractionModel("CreateProjectileOnExhaustFractionModel_", createProj.projectile.Duplicate(), new ArcEmissionModel("ArcEmissionModel_", 8, 0.0f, 360.0f, null, true, false), 1.0f, -1.0f, true));
+                        attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnExhaustFractionModel("CreateProjectileOnExhaustFractionModel_", createProj.projectile.Duplicate(), new ArcEmissionModel("ArcEmissionModel_", 8, 0.0f, 360.0f, null, true), 1.0f, -1.0f, true));
                     }
                 }
                 towerModel.GetAttackModel().weapons[0].projectile.GetBehavior<CreateEffectOnExhaustFractionModel>().effectModel.scale *= 1.25f;
@@ -219,7 +219,7 @@ namespace minicustomtowersv2
                 towerModel.GetAbility().icon = GetSpriteReference(mod, "SpikeyChaos_Icon");
                 var activate = towerModel.GetAbility().GetBehavior<ActivateAttackModel>();
                 activate.attacks[0].weapons[0].RemoveBehavior<SpinModel>();
-                activate.attacks[0].weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 8, 0.0f, 360.0f, null, true, false);
+                activate.attacks[0].weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 8, 0.0f, 360.0f, null, true);
                 activate.attacks[0].weapons[0].projectile = attackModel.weapons[0].projectile.Duplicate();
                 activate.attacks[0].weapons[0].projectile.RemoveBehavior<TravelStraitModel>();
                 activate.attacks[0].weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("TackShooter-040").GetAbility().GetBehavior<ActivateAttackModel>().attacks[0].weapons[0].projectile.GetBehavior<TravelStraitModel>().Duplicate());

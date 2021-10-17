@@ -183,7 +183,7 @@ namespace minicustomtowersv2
                         attack.weapons[0].projectile.display = "88442e0b3684e3446aaa70a036da69c9";
                         attack.weapons[0].projectile.pierce = 7.0f;
                         attack.weapons[0].projectile.GetDamageModel().damage = 15.0f;
-                        attack.weapons[0].emission = new ArcEmissionModel("BananaFarmer-050", 2, 0.0f, 20.0f, null, false, false);
+                        attack.weapons[0].emission = new ArcEmissionModel("BananaFarmer-050", 2, 0.0f, 20.0f, null, false);
                         attack.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetBehavior<CashModel>().minimum = 15.0f;
                         attack.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetBehavior<CashModel>().maximum = 15.0f;
                     }

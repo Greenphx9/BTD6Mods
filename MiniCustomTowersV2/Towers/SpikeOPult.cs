@@ -105,7 +105,7 @@ namespace minicustomtowersv2
             public override void ApplyUpgrade(TowerModel towerModel)
             {
                 var attackModel = towerModel.GetAttackModel();
-                attackModel.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 3, 0.0f, 20.0f, null, false, false);
+                attackModel.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 3, 0.0f, 20.0f, null, false);
             }
         }
         public class FragSpikes : ModUpgrade<SpikeOPult>

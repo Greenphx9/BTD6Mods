@@ -54,7 +54,7 @@ namespace minicustomtowersv2
             {
                 var attackModel = towerModel.GetAttackModel();
                 towerModel.ApplyDisplay<TacticalShotgunSniperDisplay>();
-                attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_", Game.instance.model.GetTowerFromId("BombShooter-002").GetWeapon().projectile.GetBehaviors<CreateProjectileOnContactModel>().Last().projectile.Duplicate(), new ArcEmissionModel("ArcEmissionModel_", 5, 0.0f, 360.0f, null, false, false), true, false, false));
+                attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_", Game.instance.model.GetTowerFromId("BombShooter-002").GetWeapon().projectile.GetBehaviors<CreateProjectileOnContactModel>().Last().projectile.Duplicate(), new ArcEmissionModel("ArcEmissionModel_", 5, 0.0f, 360.0f, null, false), true, false, false));
                 attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().damage = 6.0f;
                 attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().maxDamage = 6.0f;
                 attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().CapDamage(6.0f);

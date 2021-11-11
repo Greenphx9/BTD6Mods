@@ -15,7 +15,7 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
             <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/MiniCustomTowersV2/README.md"><img alt="Info" src="https://github.com/Greenphx9/BTD6Mods/blob/main/info.png?raw=true"></a>
         </td>
         <td width="11%">
-            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/MiniCustomTowersV2/MiniCustomTowersV2.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/MiniCustomTowersV2/minicustomtowersv2.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
         </td>
     </tr>
 <table>

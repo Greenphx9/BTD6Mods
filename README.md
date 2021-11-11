@@ -1,7 +1,7 @@
 # BTD6_Mods
 Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
 
-<h3>Key/Big Mods:</h3>
+# Key/Big Mods:
 
 <table style="table-layout:fixed">
     <tr>

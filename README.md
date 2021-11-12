@@ -21,6 +21,21 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
     </tr>
     <tr>
         <td width="30%" align="center">
+            <h2>Primary Paragons</h2>
+        </td>
+        <td>
+	    Adds paragons for the primary towers that don't already have paragons. Credits to Depleted Supernova#1957 since im using the way he added paragons for this mod.
+        </td>
+	<td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/PrimaryParagons/README.md"><img alt="Info" src="https://github.com/Greenphx9/BTD6Mods/blob/main/info.png?raw=true"></a>
+        </td>
+        <td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/PrimaryParagons/PrimaryParagons.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
+        </td>
+        </td>
+    </tr>
+    <tr>
+        <td width="30%" align="center">
             <h2>Misc Towers In Shop</h2>
         </td>
         <td>

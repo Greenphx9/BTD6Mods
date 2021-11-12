@@ -2,6 +2,6 @@ Adds a new tower called the Danmaku. Fires projectiles around itself depending o
 
 Screenshots:
 
-<img alt="Screenshot" src="ttps://github.com/Greenphx9/BTD6Mods/blob/main/Danmaku/ss1.png?raw=true">
+<img alt="Screenshot" src="https://github.com/Greenphx9/BTD6Mods/blob/main/Danmaku/ss1.png?raw=true">
 
-<img alt="Screenshot" src="ttps://github.com/Greenphx9/BTD6Mods/blob/main/Danmaku/ss2.png?raw=true">
+<img alt="Screenshot" src="https://github.com/Greenphx9/BTD6Mods/blob/main/Danmaku/ss2.png?raw=true">

@@ -34,7 +34,7 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
         </td>
         </td>
     </tr>
-<tr>
+    <tr>
         <td width="30%" align="center">
             <h2>Danmaku</h2>
         </td>
@@ -46,6 +46,21 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
         </td>
         <td width="11%">
             <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/Danmaku/danmaku.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
+        </td>
+        </td>
+    </tr>
+    <tr>
+        <td width="30%" align="center">
+            <h2>Zeus</h2>
+        </td>
+        <td>
+            Adds a new tower called the Zeus. Its basically a top path Druid, firing lightning, tornadoes, and lightning balls.
+        </td>
+	<td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/ZeusTower/README.md"><img alt="Info" src="https://github.com/Greenphx9/BTD6Mods/blob/main/info.png?raw=true"></a>
+        </td>
+        <td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/ZeusTower/zeus.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
         </td>
         </td>
     </tr>

@@ -19,4 +19,19 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
         </td>
         </td>
     </tr>
+    <tr>
+        <td width="30%" align="center">
+            <h2>Misc Towers In Shop</h2>
+        </td>
+        <td>
+            Adds sub-towers to the shop like paragons (outdated, needs ninja paragon), sentries, and more.
+        </td>
+	<td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/Misc%20Towers%20In%20Shop/README.md"><img alt="Info" src="https://github.com/Greenphx9/BTD6Mods/blob/main/info.png?raw=true"></a>
+        </td>
+        <td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/Misc%20Towers%20In%20Shop/MiscTowersInShop.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
+        </td>
+        </td>
+    </tr>
 <table>

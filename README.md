@@ -34,7 +34,7 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
         </td>
         </td>
     </tr>
-tr>
+<tr>
         <td width="30%" align="center">
             <h2>Danmaku</h2>
         </td>

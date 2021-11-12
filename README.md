@@ -34,4 +34,19 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
         </td>
         </td>
     </tr>
+tr>
+        <td width="30%" align="center">
+            <h2>Danmaku</h2>
+        </td>
+        <td>
+            Adds a new tower called the Danmaku. Fires projectiles around itself depending on the upgrade. Has a paragon which may lag the game. Credits to Maycrom for the idea.
+        </td>
+	<td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/Danmaku/README.md"><img alt="Info" src="https://github.com/Greenphx9/BTD6Mods/blob/main/info.png?raw=true"></a>
+        </td>
+        <td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/Danmaku/danmaku.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
+        </td>
+        </td>
+    </tr>
 <table>

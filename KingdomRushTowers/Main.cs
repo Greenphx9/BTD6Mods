@@ -49,6 +49,7 @@ using Assets.Scripts.Unity.UI_New.InGame.StoreMenu;
 using UnityEngine.UI;
 using Assets.Scripts.Simulation.Towers.Projectiles;
 using Assets.Scripts.Simulation.Bloons;
+using Assets.Scripts.Simulation.Input;
 
 [assembly: MelonInfo(typeof(KingdomRushTowers.Main), "Kingdom Rush Towers", "1.0.0", "Greenphx, Kingdom Rush Devs")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -87,6 +88,5 @@ namespace KingdomRushTowers
                 }
             }
         }
-
     }
 }

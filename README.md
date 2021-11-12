@@ -36,6 +36,21 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
     </tr>
     <tr>
         <td width="30%" align="center">
+            <h2>Kingdom Rush Towers</h2>
+        </td>
+        <td>
+	    Adds Towers from Kingdom Rush to Bloons TD 6.
+        </td>
+	<td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/KingdomRushTowers/README.md"><img alt="Info" src="https://github.com/Greenphx9/BTD6Mods/blob/main/info.png?raw=true"></a>
+        </td>
+        <td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/KingdomRushTowers/KingdomRushTowers.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
+        </td>
+        </td>
+    </tr>
+    <tr>
+        <td width="30%" align="center">
             <h2>Misc Towers In Shop</h2>
         </td>
         <td>

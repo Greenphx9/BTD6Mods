@@ -259,7 +259,7 @@ namespace KingdomRushTowers
                 attackModel.weapons[0].projectile.GetDamageModel().damage = 10.0f;
                 attackModel.weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("BombShooter").GetAttackModel().weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().Duplicate());
                 attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().damage = 40.0f;
-                attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_", towerModel.GetAttackModel().weapons[0].projectile.Duplicate(), new ArcEmissionModel("ArcEmissionModel_", 6, 0.0f, 360.0f, null, false, false), false, false, false));
+                attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_", towerModel.GetAttackModel().weapons[0].projectile.Duplicate(), new ArcEmissionModel("ArcEmissionModel_", 6, 0.0f, 360.0f, null, false), false, false, false));
                 attackModel.weapons[0].projectile.GetBehaviors<CreateProjectileOnContactModel>()[1].projectile.GetDamageModel().damage = 70.0f;
             }
             public override string Icon => "ShrapnelShot_Icon";

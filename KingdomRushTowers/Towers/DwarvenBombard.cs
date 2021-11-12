@@ -190,7 +190,7 @@ namespace KingdomRushTowers
                 var attackModel = towerModel.GetAttackModel();
                 var proj = attackModel.weapons[0].projectile.Duplicate();
                 proj.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().damage /= 2f;
-                proj.AddBehavior(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_", proj.Duplicate(), new ArcEmissionModel("ArcEmissionModel_", 5, 0.0f, 360.0f, null, false, false), false, false, false));
+                proj.AddBehavior(new CreateProjectileOnContactModel("CreateProjectileOnContactModel_", proj.Duplicate(), new ArcEmissionModel("ArcEmissionModel_", 5, 0.0f, 360.0f, null, false), false, false, false));
                 attackModel.weapons[0].AddBehavior(new AlternateProjectileModel("AlternateProjectileModel_", proj, new SingleEmissionModel("SEM_", null), 4, -1)); 
 
             }

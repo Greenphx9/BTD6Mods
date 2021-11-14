@@ -95,3 +95,23 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
         </td>
     </tr>
 <table>
+
+# Minor Mods:
+
+<table style="table-layout:fixed">
+    <tr>
+        <td width="30%" align="center">
+            <h2>Unlimited Ultraboosts</h2>
+        </td>
+        <td>
+            Allows you to ultraboost more than 10 times.
+        </td>
+	<td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/Unlimited%20Ultraboosts/README.md"><img alt="Info" src="https://github.com/Greenphx9/BTD6Mods/blob/main/info.png?raw=true"></a>
+        </td>
+        <td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/Unlimited%20Ultraboosts/UnlimitedUltraboosts.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
+        </td>
+        </td>
+    </tr>
+<table>

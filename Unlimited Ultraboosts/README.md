@@ -1,4 +1,4 @@
-Allows you to ultraboost more then 20 times.
+Allows you to ultraboost more than 10 times.
 
 Screenshot:
 

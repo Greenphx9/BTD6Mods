@@ -41,14 +41,16 @@ using Assets.Scripts.Unity.Display;
 using PrimaryParagons.Paragons.Towers;
 using BTD_Mod_Helper.Api;
 
-[assembly: MelonInfo(typeof(PrimaryParagons.Main), "Primary Paragons", "1.0.0", "Greenphx")]
+[assembly: MelonColor(ConsoleColor.Blue)]
+[assembly: MelonInfo(typeof(PrimaryParagons.Main), "Primary Paragons", "1.0.1", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace PrimaryParagons
 {
     public class Main : BloonsTD6Mod
     {
-
+        public override string MelonInfoCsURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/PrimaryParagons/Main.cs";
+        public override string LatestURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/PrimaryParagons/PrimaryParagons.dll?raw=true";
         public override void OnApplicationStart()
         {
             MelonLogger.Msg("Primary Paragons loaded!");

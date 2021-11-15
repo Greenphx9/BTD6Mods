@@ -145,6 +145,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\steamapps\common\BloonsTD6\Mods"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\steamapps\common\BloonsTD6\Mods"
+copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Windows Stuff\Documents\GitHub\BTD6Mods\PrimaryParagons"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -36,6 +36,21 @@ Mods I have made for Bloons TD 6. Requires Bloons TD 6 Mod Helper
     </tr>
     <tr>
         <td width="30%" align="center">
+            <h2>Military Paragons</h2>
+        </td>
+        <td>
+	    Adds paragons for military towers. Credits to Depleted Supernova#1957 since im using the way he added paragons for this mod.
+        </td>
+	<td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/MilitaryParagons/README.md"><img alt="Info" src="https://github.com/Greenphx9/BTD6Mods/blob/main/info.png?raw=true"></a>
+        </td>
+        <td width="11%">
+            <a href="https://github.com/Greenphx9/BTD6Mods/blob/main/MilitaryParagons/MilitaryParagons.dll"><img alt="Download" src="https://github.com/Greenphx9/BTD6Mods/blob/main/download_small.png?raw=true"></a>
+        </td>
+        </td>
+    </tr>
+    <tr>
+        <td width="30%" align="center">
             <h2>Kingdom Rush Towers</h2>
         </td>
         <td>

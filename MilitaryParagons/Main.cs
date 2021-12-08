@@ -68,7 +68,6 @@ namespace MilitaryParagons
         {
             "SniperMonkey",
             "MonkeySub",
-            "MonkeyBuccaneer",
             "MonkeyAce",
             "HeliPilot",
             "MortarMonkey",
@@ -100,10 +99,6 @@ namespace MilitaryParagons
             model.AddTowerToGame(ParagonMonkeySub.MonkeySubParagon(model));
             LocalizationManager.Instance.textTable.Add("MonkeySub Paragon", "First Strike Commander");
             LocalizationManager.Instance.textTable.Add("MonkeySub Paragon Description", "A submarine that fires 20 deadly missiles every second. What could go wrong?");
-            CreateUpgrade(model.GetTowerFromId("MonkeyBuccaneer"), 700000, ModContent.GetSpriteReference<Main>("PirateEmpire_Icon"), model);
-            model.AddTowerToGame(ParagonMonkeyBuccaneer.MonkeyBuccaneerParagon(model));
-            LocalizationManager.Instance.textTable.Add("MonkeyBuccaneer Paragon", "Pirate Empire");
-            LocalizationManager.Instance.textTable.Add("MonkeyBuccaneer Paragon Description", "Thanks to the help from other pirates, this monkey can hook multiple Bloons in rapidly.");
             CreateUpgrade(model.GetTowerFromId("MonkeyAce"), 1000000, ModContent.GetSpriteReference<Main>("NevaMissingShredder_Icon"), model);
             model.AddTowerToGame(ParagonMonkeyAce.MonkeyAceParagon(model));
             LocalizationManager.Instance.textTable.Add("MonkeyAce Paragon", "Neva-Missing Shredder");

@@ -44,7 +44,83 @@ namespace MilitaryParagons.Paragons.Towers
 {
     public class ParagonMonkeySub
     {
-        public static TowerModel MonkeySubParagon(GameModel model)
+        public class MonkeySubParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "MonkeySub-205";
+        }
+        public class FirstStrikeCommander : ModParagonUpgrade<MonkeySubParagon>
+        {
+            public override string DisplayName => "First Strike Commander";
+            public override int Cost => 950000;
+            public override string Description => "A submarine that fires 20 deadly missiles every second. What could go wrong?";
+            public override string Icon => "FirstStrikeCommander_Icon";
+            public override string Portrait => "FirstStrikeCommander_Portrait";
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                attackModel.weapons[0].emission.Cast<EmissionWithOffsetsModel>().projectileCount = 4;
+                attackModel.weapons[0].projectile.pierce = 125.0f;
+                attackModel.weapons[0].projectile.GetDamageModel().damage = 150.0f;
+                attackModel.weapons[0].projectile.GetDescendants<DamageModel>().ForEach(damage => damage.immuneBloonProperties = BloonProperties.None);
+                attackModel.weapons[0].Rate = 0.15f;
+                towerModel.range *= 1.75f;
+                attackModel.range *= 1.75f;
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("MonkeySub-050").GetAttackModel(1).Duplicate());
+                var attackModel2 = towerModel.GetAttackModel(1);
+                attackModel2.weapons[0].Rate = 0.05f;
+                attackModel2.range = 1000.0f;
+                attackModel2.weapons[0].projectile.GetBehavior<CreateProjectileOnExpireModel>().projectile.GetDamageModel().damage = 1000.0f;
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("MonkeySub-050").GetBehavior<PreEmptiveStrikeLauncherModel>().Duplicate());
+
+                var submergeEffect = Game.instance.model.GetTowerFromId("MonkeySub-502").Duplicate().GetBehavior<SubmergeEffectModel>().effectModel;
+                var submerge = Game.instance.model.GetTowerFromId("MonkeySub-502").Duplicate().GetBehavior<SubmergeModel>();
+                towerModel.AddBehavior(new HeroXpScaleSupportModel("HeroXpScaleSupportModel_", true, submerge.heroXpScale, null));
+                towerModel.AddBehavior(new AbilityCooldownScaleSupportModel("AbilityCooldownScaleSupportModel_", true, submerge.abilityCooldownSpeedScale, true, false, null, submerge.buffLocsName, submerge.buffIconName, false, submerge.supportMutatorPriority));
+
+                foreach (var attackModels in towerModel.GetAttackModels())
+                {
+                    if (attackModels.name.Contains("Submerge"))
+                    {
+                        attackModels.name = attackModel.name.Replace("Submerged", "");
+                        attackModels.weapons[0].GetBehavior<EjectEffectModel>().effectModel.assetId = submerge.attackDisplayPath;
+                    }
+
+                    attackModel.RemoveBehavior<SubmergedTargetModel>();
+                }
+
+                towerModel.AddBehavior(new CreateEffectAfterTimeModel("CreateEffectAfterTimeModel_", submergeEffect, 0f, true));
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class FirstStrikeCommanderDisplay : ModTowerDisplay<MonkeySubParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.MonkeySub, 2, 5, 0);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+                foreach (var renderer in node.genericRenderers)
+                {
+                    renderer.material.mainTexture = GetTexture("FirstStrikeCommander_Display");
+                    //node.SaveMeshTexture();
+                }
+                //node.GetMeshRenderer().material.mainTexture = GetTexture("FirstStrikeCommander_Display");
+            }
+        }
+        /*public static TowerModel MonkeySubParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("MonkeySub-205").Duplicate();
             TowerModel backup = model.GetTowerFromId("MonkeySub-205").Duplicate();
@@ -134,7 +210,7 @@ namespace MilitaryParagons.Paragons.Towers
                 }
                 //node.GetMeshRenderer().material.mainTexture = GetTexture("FirstStrikeCommander_Display");
             }
-        }
+        }*/
     }
     
 }

@@ -44,7 +44,55 @@ namespace MilitaryParagons.Paragons.Towers
 {
     public class ParagonMortarMonkey
     {
-        public static TowerModel MortarMonkeyParagon(GameModel model)
+        public class MortarMonkeyParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "MortarMonkey-250";
+        }
+        public class BlooncinerationAndAwe : ModParagonUpgrade<MortarMonkeyParagon>
+        {
+            public override string DisplayName => "Blooncineration And Awe";
+            public override int Cost => 550000;
+            public override string Description => "Did you know if you combine huge damage, fast firing, and deadly flames, you get a super powerful monkey?";
+            public override string Icon => "BlooncinerationAwe_Icon";
+            public override string Portrait => "BlooncinerationAwe_Portrait";
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                attackModel.weapons[0].projectile = Game.instance.model.GetTowerFromId("MortarMonkey-520").GetAttackModel().weapons[0].projectile.Duplicate();
+                attackModel.weapons[0].projectile.GetDescendants<DamageModel>().ForEach(damage => damage.damage *= 10.0f);
+                foreach (var create in Game.instance.model.GetTowerFromId("MortarMonkey-205").Duplicate().GetDescendants<CreateProjectileOnExhaustFractionModel>().ToIl2CppList())
+                {
+                    var proj = create.Duplicate();
+                    proj.GetDescendants<DamageModel>().ForEach(damage => damage.damage *= 7f);
+                    attackModel.weapons[0].projectile.AddBehavior(proj);
+                }
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class BlooncinerationAndAweDisplay : ModTowerDisplay<MortarMonkeyParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.MortarMonkey, 2, 5, 0);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+                //SetMeshTexture(node, "ab1", 1);
+                
+            }
+        }
+        /*public static TowerModel MortarMonkeyParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("MortarMonkey-250").Duplicate();
             TowerModel backup = model.GetTowerFromId("MortarMonkey-250").Duplicate();
@@ -110,7 +158,7 @@ namespace MilitaryParagons.Paragons.Towers
                  
                 
             }
-        }
+        }*/
     }
     
 }

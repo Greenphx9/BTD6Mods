@@ -44,7 +44,53 @@ namespace MilitaryParagons.Paragons.Towers
 {
     public class ParagonDartlingGunner
     {
-        public static TowerModel DartlingGunnerParagon(GameModel model)
+        public class DartlingGunnerParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "DartlingGunner-250";
+        }
+        public class RayOfMAD : ModParagonUpgrade<DartlingGunnerParagon>
+        {
+            public override string DisplayName => "Ray Of MAD";
+            public override int Cost => 1700000;
+            public override string Description => "A machine so powerful not even Dr Monkey could make it at full power. The explosive MAD bullets had to be less powerful for it to even be possible to make.";
+            public override string Icon => "RayOfMAD_Icon";
+            public override string Portrait => "RayOfMAD_Portrait";
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                attackModel.GetDescendants<DamageModifierForTagModel>().ForEach(damage => damage.damageMultiplier = 0.25f);
+                attackModel.GetDescendants<WeaponModel>().ForEach(weapon => weapon.Rate = 0.005f);
+                attackModel.GetDescendants<ProjectileModel>().ForEach(proj => proj.ApplyDisplay<DartlingGunnerParagonDisplayProj>());
+                towerModel.GetAbilites().ForEach(ability => ability.GetDescendants<WeaponModel>().ForEach(weapon => weapon.Rate = 0.05f));
+                towerModel.GetDescendants<ProjectileModel>().ForEach(projectile => projectile.AddBehavior(new ExpireProjectileAtScreenEdgeModel("EPASEM")));
+                attackModel.GetDescendants<ProjectileModel>().ForEach(projectile => projectile.AddBehavior(Game.instance.model.GetTowerFromId("DartlingGunner-025").GetWeapon().projectile.GetBehavior<KnockbackModel>().Duplicate()));
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class RayOfMADDisplay : ModTowerDisplay<DartlingGunnerParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.DartlingGunner, 2, 5, 0);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+                SetMeshTexture(node, "RayOfMAD_Display");
+                //node.GetMeshRenderer().material.mainTexture = GetTexture("FirstStrikeCommander_Display");
+            }
+        }
+        /*public static TowerModel DartlingGunnerParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("DartlingGunner-250").Duplicate();
             TowerModel backup = model.GetTowerFromId("DartlingGunner-250").Duplicate();
@@ -108,7 +154,7 @@ namespace MilitaryParagons.Paragons.Towers
                 //node.SaveMeshTexture();
                 
             }
-        }
+        }*/
         public class DartlingGunnerParagonDisplayProj : ModDisplay
         {
             public override string BaseDisplay => Game.instance.model.GetTowerFromId("DartlingGunner-250").GetWeapon().projectile.display;

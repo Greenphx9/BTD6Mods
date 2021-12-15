@@ -45,7 +45,76 @@ namespace MilitaryParagons.Paragons.Towers
 {
     public class ParagonHeliPilot
     {
-        public static TowerModel HeliPilotParagon(GameModel model)
+        public class HeliPilotParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "HeliPilot-502";
+        }
+        public class ApacheCommander : ModParagonUpgrade<HeliPilotParagon>
+        {
+            public override string DisplayName => "Apache Commander";
+            public override int Cost => 550000;
+            public override string Description => "Whats stronger than one Apache Prime? Multiple!";
+            public override string Icon => "ApacheCommander_Icon";
+            public override string Portrait => "ApacheCommander_Portrait";
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                towerModel.GetBehavior<AirUnitModel>().display = ModContent.GetDisplayGUID<HeliPilotParagonDisplay>();
+                towerModel.GetBehavior<ParagonTowerModel>().displayDegreePaths.ForEach(path => path.assetPath = ModContent.GetDisplayGUID<HeliPilotParagonDisplayPad>());
+                towerModel.doesntRotate = true;
+                towerModel.GetBehavior<DisplayModel>().ignoreRotation = true;
+                TowerModel backup = Game.instance.model.GetTowerFromId("HeliPilot-502").Duplicate();
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                towerModel.GetDescendants<EmissionWithOffsetsModel>().ForEach(emission => emission.projectileCount = 3);
+                towerModel.GetDescendants<WeaponModel>().ForEach(weapon => weapon.Rate *= 0.33f);
+                towerModel.GetDescendants<DamageModel>().ForEach(damage => damage.damage *= 3.0f);
+                towerModel.GetDescendants<DamageModel>().ForEach(damage => damage.immuneBloonProperties = BloonProperties.None);
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("HeliPilot-050").GetAbilites().Last().Duplicate());
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("HeliPilot-050").GetAbilites()[0].Duplicate());
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("HeliPilot-050").GetAbilites()[1].GetBehavior<ActivateAttackModel>().attacks[0].Duplicate());
+                towerModel.GetAttackModels().Last().GetDescendants<WeaponModel>().ForEach(weapon => weapon.Rate = 30.0f);
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("HeliPilot-050").GetAbilites()[1].GetBehavior<ActivateAttackModel>().attacks[1].Duplicate());
+                towerModel.GetAttackModels().Last().GetDescendants<WeaponModel>().ForEach(weapon => weapon.Rate = 50.0f);
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("EngineerMonkey-200").GetAttackModel().Duplicate());
+
+                var attackModel2 = towerModel.GetAttackModels().Last();
+                var createTower = attackModel2.weapons[0].projectile.GetBehavior<CreateTowerModel>();
+                createTower.tower = backup;
+                createTower.tower.cost = 0.0f;
+                createTower.tower.radius = 0.0f;
+                createTower.tower.isSubTower = true;
+                //createTower.tower.RemoveBehavior<DisplayModel>();
+                createTower.tower.display = "";
+                createTower.tower.RemoveBehavior<CreateSoundOnTowerPlaceModel>();
+                createTower.tower.RemoveBehavior<CreateSoundOnSellModel>();
+                createTower.tower.name += "ApacheCommander_Apache";
+                createTower.tower.AddBehavior(Game.instance.model.GetTowerFromId("Sentry").GetBehavior<TowerExpireModel>().Duplicate());
+                createTower.tower.GetBehavior<AirUnitModel>().display = ModContent.GetDisplayGUID<HeliPilotParagonDisplay>();
+                createTower.tower.GetBehavior<TowerExpireModel>().Lifespan *= 2.0f;
+
+                //towerModel.AddBehavior(model.GetTowerFromId("HeliPilot-205").GetBehavior<ComancheDefenceModel>().Duplicate());
+                //towerModel.GetBehavior<ComancheDefenceModel>().towerModel = backup.Duplicate();
+                //towerModel.GetBehavior<ComancheDefenceModel>().towerModel.cost = 0.0f;
+                //towerModel.GetBehavior<ComancheDefenceModel>().towerModel.dontDisplayUpgrades = true;
+                //towerModel.GetBehavior<ComancheDefenceModel>().towerModel.isSubTower = true;
+                //towerModel.GetBehavior<ComancheDefenceModel>().towerModel.tier = 0;
+                //towerModel.GetBehavior<ComancheDefenceModel>().towerModel.tiers = new int[] { 0, 0, 0 };
+
+
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+                createTower.tower.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                createTower.tower.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        /*public static TowerModel HeliPilotParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("HeliPilot-502").Duplicate();
             TowerModel backup = model.GetTowerFromId("HeliPilot-502").Duplicate();
@@ -72,6 +141,7 @@ namespace MilitaryParagons.Paragons.Towers
             towerModel.towerSelectionMenuThemeId = "Default";
             towerModel.ignoreCoopAreas = false;
             towerModel.canAlwaysBeSold = false;*/
+        /*
             towerModel.isParagon = true;
             towerModel.doesntRotate = true;
             towerModel.GetBehavior<DisplayModel>().ignoreRotation = true;
@@ -134,7 +204,7 @@ namespace MilitaryParagons.Paragons.Towers
             createTower.tower.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
             createTower.tower.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
             return towerModel;
-        }
+        }*/
         public class HeliPilotParagonDisplay : ModDisplay
         {
             public override string BaseDisplay => Game.instance.model.GetTowerFromId("HeliPilot-205").GetBehavior<AirUnitModel>().display;

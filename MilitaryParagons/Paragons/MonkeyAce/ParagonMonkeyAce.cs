@@ -45,7 +45,66 @@ namespace MilitaryParagons.Paragons.Towers
 {
     public class ParagonMonkeyAce
     {
-        public static TowerModel MonkeyAceParagon(GameModel model)
+        public class MonkeyAceParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "MonkeyAce-502";
+        }
+        public class NevaMissingShredderCommander : ModParagonUpgrade<MonkeyAceParagon>
+        {
+            public override string DisplayName => "Neva-Missing Shredder";
+            public override int Cost => 1385000;
+            public override string Description => "If only the Bloons knew what was about to hit them.";
+            public override string Icon => "NevaMissingShredder_Icon";
+            public override SpriteReference PortraitReference => Game.instance.model.GetTowerFromId("MonkeyAce-520").portrait;
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                attackModel.weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("MonkeyAce-003").GetWeapon().projectile.GetBehavior<TrackTargetModel>().Duplicate());
+                attackModel.weapons[0].projectile.GetBehavior<TrackTargetModel>().turnRatePerFrame = 6.0f;
+                attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Speed *= 0.5f;
+                attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Lifespan *= 3.0f;
+                attackModel.weapons[0].emission.Cast<ArcEmissionModel>().count *= 2;
+                attackModel.weapons[0].projectile.GetDamageModel().damage = 55.0f;
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("MonkeyAce-220").GetBehaviors<AttackAirUnitModel>()[1].Duplicate());
+                var attackModel2 = towerModel.GetBehaviors<AttackAirUnitModel>()[2];
+                attackModel2.weapons[0].Rate = 0.075f;
+                attackModel2.RemoveBehavior<CheckAirUnitOverTrackModel>();
+                attackModel2.GetDescendants<DamageModel>().ForEach(damage => damage.damage = 275.0f);
+                attackModel2.GetDescendants<DamageModel>().ForEach(damage => damage.immuneBloonProperties = BloonProperties.None);
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("MonkeyAce-250").GetBehaviors<AttackAirUnitModel>()[1].Duplicate());
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("MonkeyAce-052").GetBehaviors<AttackAirUnitModel>()[1].Duplicate());
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("MonkeyAce-205").GetBehaviors<AttackAirUnitModel>()[1].Duplicate());
+
+                var lastAttack = towerModel.GetAttackModels().Last();
+                lastAttack.GetDescendants<WeaponModel>().ForEach(weapon => weapon.Rate *= 0.25f);
+                lastAttack.GetDescendants<DamageModel>().ForEach(damage => damage.damage = 40.0f);
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class NevaMissingShredderDisplay : ModTowerDisplay<MonkeyAceParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.MonkeyAce, 5, 0, 2);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+            }
+        }
+        /*public static TowerModel MonkeyAceParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("MonkeyAce-502").Duplicate();
             TowerModel backup = model.GetTowerFromId("MonkeyAce-502").Duplicate();
@@ -125,7 +184,7 @@ namespace MilitaryParagons.Paragons.Towers
                 //}
                 node.SaveMeshTexture();
             }
-        }
+        }*/
 
     }
     

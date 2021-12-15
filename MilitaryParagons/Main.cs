@@ -48,7 +48,7 @@ using Assets.Scripts.Simulation.Objects;
 using UnhollowerRuntimeLib;
 
 [assembly: MelonColor(ConsoleColor.Green)]
-[assembly: MelonInfo(typeof(MilitaryParagons.Main), "Military Paragons", "1.0.0", "Greenphx")]
+[assembly: MelonInfo(typeof(MilitaryParagons.Main), "Military Paragons", "1.0.1", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace MilitaryParagons
@@ -64,7 +64,7 @@ namespace MilitaryParagons
             MelonLogger.Msg("Military Paragons loaded!");
 
         }
-        static string[] ParagonTowers =
+        /*static string[] ParagonTowers =
         {
             "SniperMonkey",
             "MonkeySub",
@@ -133,7 +133,7 @@ namespace MilitaryParagons
             localizedNameOverride: ""
             );
             model.AddUpgrade(upgradeModel);
-        }
+        }*/
         public override void OnTowerCreated(Tower tower, Entity target, Model modelToUse)
         {
             base.OnTowerCreated(tower, target, modelToUse);
@@ -160,7 +160,7 @@ namespace MilitaryParagons
             {
                 try
                 {
-                    // code
+                    
                 }
                 catch (Exception e)
                 {

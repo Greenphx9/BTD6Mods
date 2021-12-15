@@ -44,7 +44,65 @@ namespace MilitaryParagons.Paragons.Towers
 {
     public class ParagonSniperMonkey
     {
-        public static TowerModel SniperMonkeyParagon(GameModel model)
+        public class SniperMonkeyParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "SniperMonkey-025";
+        }
+        public class EliteMOABCrippler : ModParagonUpgrade<SniperMonkeyParagon>
+        {
+            public override string DisplayName => "Elite MOAB Crippler";
+            public override int Cost => 650000;
+            public override string Description => "A fast firing, smart, MOAB crippling rifle can deal with almost anything.";
+            public override string Icon => "EliteMOABCrippler_Icon";
+            public override string Portrait => "EliteMOABCrippler_Portrait";
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                attackModel.weapons[0].Rate = 0.02f;
+                attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+                attackModel.weapons[0].projectile.GetDamageModel().damage = 40.0f;
+                attackModel.weapons[0].projectile.GetBehavior<EmitOnDamageModel>().projectile.GetDamageModel().damage = 10.0f;
+                attackModel.weapons[0].projectile.GetBehavior<EmitOnDamageModel>().projectile.pierce = 100.0f;
+                attackModel.weapons[0].projectile.GetBehavior<EmitOnDamageModel>().projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+                attackModel.weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("SniperMonkey-500").GetWeapon().projectile.GetBehavior<SlowMaimMoabModel>().Duplicate());
+
+                towerModel.AddBehavior(new ActivateAbilityOnRoundStartModel("AAORSM", Game.instance.model.GetTowerFromId("SniperMonkey-250").GetAbility().Duplicate()));
+                towerModel.GetBehavior<ActivateAbilityOnRoundStartModel>().abilityModel.Cooldown = 30.0f;
+                towerModel.GetBehavior<ActivateAbilityOnRoundStartModel>().abilityModel.resetCooldownOnTierUpgrade = false;
+                towerModel.GetBehavior<ActivateAbilityOnRoundStartModel>().abilityModel.GetDescendants<CashModel>().ForEach(cash => cash.maximum = 10000f);
+                towerModel.GetBehavior<ActivateAbilityOnRoundStartModel>().abilityModel.GetDescendants<CashModel>().ForEach(cash => cash.minimum = 10000f);
+                towerModel.GetBehavior<ActivateAbilityOnRoundStartModel>().abilityModel.enabled = false;
+
+                towerModel.AddBehavior(towerModel.GetBehavior<ActivateAbilityOnRoundStartModel>().abilityModel);
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class EliteMOABCripplerDisplay : ModTowerDisplay<SniperMonkeyParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.SniperMonkey, 0, 2, 5);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+                foreach (var renderer in node.genericRenderers)
+                {
+                    renderer.material.mainTexture = GetTexture("EliteMOABCrippler_Display");
+                }
+            }
+        }
+        /*public static TowerModel SniperMonkeyParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("SniperMonkey-025").Duplicate();
             TowerModel backup = model.GetTowerFromId("SniperMonkey-025").Duplicate();
@@ -128,7 +186,7 @@ namespace MilitaryParagons.Paragons.Towers
                     renderer.material.mainTexture = GetTexture("MOABExecutioner_Display");
                 }
             }
-        }
+        }*/
     }
     
 }

@@ -39,9 +39,9 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="BloonsTD6 Mod Helper, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="BloonsTD6 Mod Helper, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Steam\steamapps\common\BloonsTD6\ModsTest\BloonsTD6 Mod Helper.dll</HintPath>
+      <HintPath>..\..\..\..\..\Steam\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
@@ -245,12 +245,6 @@
     <EmbeddedResource Include="Paragons\SniperMonkey\EliteMOABCrippler_Portrait.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Paragons\SniperMonkey\EliteMOABCrippler_Display.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Paragons\MonkeySub\FirstStrikeCommander_Display.png" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Paragons\MonkeySub\FirstStrikeCommander_Icon.png" />
     <EmbeddedResource Include="Paragons\MonkeySub\FirstStrikeCommander_Portrait.png" />
   </ItemGroup>
@@ -278,6 +272,15 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Paragons\DartlingGunner\RayOfMADProj_Display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Paragons\SniperMonkey\EliteMOABCrippler_Display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Paragons\MonkeySub\FirstStrikeCommander_Display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Paragons\MortarMonkey\ab1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

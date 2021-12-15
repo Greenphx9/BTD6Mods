@@ -41,6 +41,7 @@ using Assets.Scripts.Unity.Display;
 using PrimaryParagons.Paragons.Towers;
 using BTD_Mod_Helper.Api;
 
+[assembly: MelonColor(ConsoleColor.Blue)]
 [assembly: MelonInfo(typeof(PrimaryParagons.Main), "Primary Paragons", "1.0.3", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 

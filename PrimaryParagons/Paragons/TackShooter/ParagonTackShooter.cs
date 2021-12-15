@@ -44,7 +44,83 @@ namespace PrimaryParagons.Paragons.Towers
 {
     public class ParagonTackShooter
     {
-        public static TowerModel TackShooterParagon(GameModel model)
+
+        public class TackShooterParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "TackShooter-205";
+        }
+        public class FieryDoom : ModParagonUpgrade<TackShooterParagon>
+        {
+            public override string DisplayName => "Fiery Doom";
+            public override int Cost => 1200000;
+            public override string Description => "Flaming tacks and blades so hot that not even purple Bloons are immune.";
+            public override string Icon => "FieryDoom_Icon";
+            public override string Portrait => "FieryDoom_Portrait";
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                towerModel.range *= 2.0f;
+                attackModel.range *= 2.0f;
+                attackModel.weapons[0].Rate = 0.05f;
+                attackModel.weapons[0].emission.Cast<ArcEmissionModel>().count *= 2;
+
+                var projectileModel = attackModel.weapons[0].projectile;
+                projectileModel.GetBehavior<TravelStraitModel>().Lifespan *= 1.5f;
+                projectileModel.display = "c184360c85b9d70499bb2fff7c77ecb2";
+                projectileModel.pierce = 100.0f;
+                projectileModel.GetDamageModel().damage = 75f;
+                projectileModel.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("WizardMonkey-030").GetAttackModel(3).Duplicate());
+
+                var attackModel2 = towerModel.GetAttackModel(1);
+                attackModel2.range = 2000.0f;
+                attackModel2.fireWithoutTarget = true;
+                attackModel2.weapons[0].Rate = 5.0f;
+                attackModel2.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 250, 0.0f, 360.0f, null, false);
+                attackModel2.weapons[0].projectile.pierce = 50.0f;
+                attackModel2.weapons[0].projectile.GetDamageModel().damage = 100.0f;
+                attackModel2.weapons[0].projectile.GetBehavior<TravelStraitModel>().Lifespan = 100.0f;
+                attackModel2.weapons[0].projectile.AddBehavior(new ExpireProjectileAtScreenEdgeModel("ExpireProjectileAtScreenEdgeModel_"));
+                attackModel2.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("TackShooter-050").GetAbility().GetBehavior<ActivateAttackModel>().attacks[0].Duplicate());
+
+                var attackModel3 = towerModel.GetAttackModel(2);
+                attackModel3.range = 1000.0f;
+                attackModel3.weapons[0].projectile.AddBehavior(new ExpireProjectileAtScreenEdgeModel("ExpireProjectileAtScreenModel_"));
+                attackModel3.weapons[0].emission.Cast<ArcEmissionModel>().count = 6;
+                attackModel3.weapons[0].projectile.GetDamageModel().damage = 20.0f;
+                attackModel3.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class FieryDoomDisplay : ModTowerDisplay<TackShooterParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.TackShooter, 0, 0, 5);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+                foreach (var renderer in node.genericRenderers)
+                {
+                    renderer.material.mainTexture = GetTexture("FieryDoom_Display");
+                }
+            }
+        }
+        /*public static TowerModel TackShooterParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("TackShooter-205").Duplicate();
             TowerModel backup = model.GetTowerFromId("TackShooter-205").Duplicate();
@@ -77,10 +153,10 @@ namespace PrimaryParagons.Paragons.Towers
             towerModel.portrait = ModContent.GetSpriteReference<Main>("FieryDoom_Portrait");
             var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
 
-           // towerModel.ApplyDisplay<TackShooterParagonDisplay>();
+            towerModel.ApplyDisplay<TackShooterParagonDisplay>();
 
             towerModel.AddBehavior(boomerangParagon.GetBehavior<ParagonTowerModel>());
-            //towerModel.GetBehavior<ParagonTowerModel>().displayDegreePaths.ForEach(path => path.assetPath = ModContent.GetDisplayGUID<TackShooterParagonDisplay>());
+            towerModel.GetBehavior<ParagonTowerModel>().displayDegreePaths.ForEach(path => path.assetPath = ModContent.GetDisplayGUID<TackShooterParagonDisplay>());
             towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
 
             var attackModel = towerModel.GetAttackModel();

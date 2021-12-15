@@ -108,9 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
-    <Compile Include="Paragons\GlueGunner\ParagonTackShooter.cs" />
+    <Compile Include="Paragons\TackShooter\ParagonTackShooter.cs" />
     <Compile Include="Paragons\IceMonkey\ParagonIceMonkey.cs" />
-    <Compile Include="Paragons\TackShooter\ParagonGlueGunner.cs" />
+    <Compile Include="Paragons\GlueGunner\ParagonGlueGunner.cs" />
     <Compile Include="Paragons\BombShooter\ParagonBombShooter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -125,28 +125,24 @@
     <EmbeddedResource Include="Paragons\BombShooter\MOABExecutioner_Display.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Paragons\GlueGunner\FieryDoom_Display.png" />
+    <EmbeddedResource Include="Paragons\TackShooter\FieryDoom_Display.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Paragons\GlueGunner\FieryDoom_Icon.png" />
+    <EmbeddedResource Include="Paragons\TackShooter\FieryDoom_Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Paragons\GlueGunner\FieryDoom_Portrait.png" />
+    <EmbeddedResource Include="Paragons\TackShooter\FieryDoom_Portrait.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Paragons\TackShooter\SuperbGlue_Icon.png" />
-    <EmbeddedResource Include="Paragons\TackShooter\SuperbGlue_Portrait.png" />
+    <EmbeddedResource Include="Paragons\GlueGunner\SuperbGlue_Icon.png" />
+    <EmbeddedResource Include="Paragons\GlueGunner\SuperbGlue_Portrait.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Paragons\TackShooter\SuperbGlue_Display.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Include="Paragons\GlueGunner\SuperbGlue_Display.png" />
     <Content Include="Paragons\IceMonkey\0Kelvin_Display.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\steamapps\common\BloonsTD6\Mods"
-copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Windows Stuff\Documents\GitHub\BTD6Mods\PrimaryParagons"
-</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\steamapps\common\BloonsTD6\Mods"</PostBuildEvent>
   </PropertyGroup>
 </Project>

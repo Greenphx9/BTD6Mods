@@ -44,7 +44,70 @@ namespace PrimaryParagons.Paragons.Towers
 {
     public class ParagonBombShooter
     {
-        public static TowerModel BombShooterParagon(GameModel model)
+        public class BombShooterParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "BombShooter-520";
+        }
+        public class MOABExecutioner : ModParagonUpgrade<BombShooterParagon>
+        {
+            public override string DisplayName => "MOAB Executioner";
+            public override int Cost => 900000;
+            public override string Description => "Get too close, and you'll be blown to dust.";
+            public override string Icon => "MOABExecutioner_Icon";
+            public override string Portrait => "MOABExecutioner_Portrait";
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                attackModel.weapons[0].Rate = 0.25f;
+                attackModel.weapons[0].projectile.ApplyDisplay<BombShooterParagonDisplay_Projectile>();
+                attackModel.weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("BombShooter-005").GetWeapon().projectile.GetBehaviors<CreateProjectileOnExhaustFractionModel>()[1].Duplicate());
+
+                var projectileModel = attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile;
+                projectileModel.AddBehavior(new DamageModifierForTagModel("Moabs", "Moabs", 1.0f, 1000.0f, false, true));
+                projectileModel.AddBehavior(new DamageModifierForTagModel("Boss", "Boss", 1.0f, 1000.0f, false, true));
+                projectileModel.GetDamageModel().damage = 100.0f;
+                projectileModel.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+
+                var clusterModel = attackModel.weapons[0].projectile.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile;
+                clusterModel.AddBehavior(new DamageModifierForTagModel("Moabs", "Moabs", 1.0f, 100.0f, false, true));
+                clusterModel.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.AddBehavior(new DamageModifierForTagModel("Moabs", "Moabs", 1.0f, 100.0f, false, true));
+                clusterModel.AddBehavior(new DamageModifierForTagModel("Boss", "Boss", 1.0f, 100.0f, false, true));
+                clusterModel.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.AddBehavior(new DamageModifierForTagModel("Moabs", "Moabs", 1.0f, 100.0f, false, true));
+                clusterModel.pierce = 100.0f;
+                clusterModel.maxPierce = 100.0f;
+                clusterModel.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.pierce = 100.0f;
+                clusterModel.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.maxPierce = 100.0f;
+                //clusterModel.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+                //clusterModel.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class MOABExecutionerDisplay : ModTowerDisplay<BombShooterParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.BombShooter, 0, 5, 0);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+                foreach (var renderer in node.genericRenderers)
+                {
+                    renderer.material.mainTexture = GetTexture("MOABExecutioner_Display");
+                }
+            }
+        }
+        /*public static TowerModel BombShooterParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("BombShooter-520").Duplicate();
             TowerModel backup = model.GetTowerFromId("BombShooter-520").Duplicate();
@@ -111,18 +174,7 @@ namespace PrimaryParagons.Paragons.Towers
             towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
 
             return towerModel;
-        }
-        public class BombShooterParagonDisplay : ModDisplay
-        {
-            public override string BaseDisplay => Game.instance.model.GetTowerFromId("BombShooter-050").display;
-            public override void ModifyDisplayNode(UnityDisplayNode node)
-            {
-                foreach(var renderer in node.genericRenderers)
-                {
-                    renderer.material.mainTexture = GetTexture("MOABExecutioner_Display");
-                }
-            }
-        }
+        }*/
         public class BombShooterParagonDisplay_Projectile : ModDisplay
         {
             public override string BaseDisplay => "e5edd901992846e409326a506d272633";

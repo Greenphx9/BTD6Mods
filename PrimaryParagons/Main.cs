@@ -41,8 +41,7 @@ using Assets.Scripts.Unity.Display;
 using PrimaryParagons.Paragons.Towers;
 using BTD_Mod_Helper.Api;
 
-[assembly: MelonColor(ConsoleColor.Blue)]
-[assembly: MelonInfo(typeof(PrimaryParagons.Main), "Primary Paragons", "1.0.1", "Greenphx")]
+[assembly: MelonInfo(typeof(PrimaryParagons.Main), "Primary Paragons", "1.0.3", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace PrimaryParagons
@@ -51,6 +50,7 @@ namespace PrimaryParagons
     {
         public override string MelonInfoCsURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/PrimaryParagons/Main.cs";
         public override string LatestURL => "https://github.com/Greenphx9/BTD6Mods/blob/main/PrimaryParagons/PrimaryParagons.dll?raw=true";
+
         public override void OnApplicationStart()
         {
             MelonLogger.Msg("Primary Paragons loaded!");
@@ -60,7 +60,7 @@ namespace PrimaryParagons
         {
             base.OnGameModelLoaded(model);
             //thanks to depletednova for this 
-            var baseTower = "BombShooter";
+            /*var baseTower = "BombShooter";
             for (int tier = 0; tier <= 2; tier++)
             {
                 model.GetTower($"{baseTower}", 5, tier, 0).paragonUpgrade = new UpgradePathModel(upgrade: $"{baseTower} Paragon", tower: $"{baseTower}-Paragon");
@@ -70,7 +70,7 @@ namespace PrimaryParagons
                 model.GetTower($"{baseTower}", tier, 0, 5).paragonUpgrade = new UpgradePathModel(upgrade: $"{baseTower} Paragon", tower: $"{baseTower}-Paragon");
                 model.GetTower($"{baseTower}", 0, tier, 5).paragonUpgrade = new UpgradePathModel(upgrade: $"{baseTower} Paragon", tower: $"{baseTower}-Paragon");
             }
-            baseTower = "TackShooter";
+            var baseTower = "TackShooter";
             for (int tier = 0; tier <= 2; tier++)
             {
                 model.GetTower($"{baseTower}", 5, tier, 0).paragonUpgrade = new UpgradePathModel(upgrade: $"{baseTower} Paragon", tower: $"{baseTower}-Paragon");
@@ -100,10 +100,10 @@ namespace PrimaryParagons
                 model.GetTower($"{baseTower}", tier, 0, 5).paragonUpgrade = new UpgradePathModel(upgrade: $"{baseTower} Paragon", tower: $"{baseTower}-Paragon");
                 model.GetTower($"{baseTower}", 0, tier, 5).paragonUpgrade = new UpgradePathModel(upgrade: $"{baseTower} Paragon", tower: $"{baseTower}-Paragon");
             }
-            CreateUpgrade(model.GetTowerFromId("BombShooter"), 900000, ModContent.GetSpriteReference<Main>("MOABExecutioner_Icon"), model);
-            model.AddTowerToGame(ParagonBombShooter.BombShooterParagon(model));
-            LocalizationManager.Instance.textTable.Add("BombShooter Paragon", "MOAB Executioner");
-            LocalizationManager.Instance.textTable.Add("BombShooter Paragon Description", "Get too close, and you'll be blown to dust.");
+            //CreateUpgrade(model.GetTowerFromId("BombShooter"), 900000, ModContent.GetSpriteReference<Main>("MOABExecutioner_Icon"), model);
+            //model.AddTowerToGame(ParagonBombShooter.BombShooterParagon(model));
+            //LocalizationManager.Instance.textTable.Add("BombShooter Paragon", "MOAB Executioner");
+            //LocalizationManager.Instance.textTable.Add("BombShooter Paragon Description", "Get too close, and you'll be blown to dust.");
 
             CreateUpgrade(model.GetTowerFromId("TackShooter"), 1200000, ModContent.GetSpriteReference<Main>("FieryDoom_Icon"), model);
             model.AddTowerToGame(ParagonTackShooter.TackShooterParagon(model));
@@ -118,7 +118,7 @@ namespace PrimaryParagons
             CreateUpgrade(model.GetTowerFromId("IceMonkey"), 400000, model.GetUpgrade("Snowstorm").icon, model);
             model.AddTowerToGame(ParagonIceMonkey.IceMonkeyParagon(model));
             LocalizationManager.Instance.textTable.Add("IceMonkey Paragon", "0° Kelvin");
-            LocalizationManager.Instance.textTable.Add("IceMonkey Paragon Description", "Only the strongest of Bloons are able to resist the cold icy winds.");
+            LocalizationManager.Instance.textTable.Add("IceMonkey Paragon Description", "Only the strongest of Bloons are able to resist the cold icy winds.");*/
         }
         public void CreateUpgrade(TowerModel towerModel, int price, SpriteReference icon, GameModel model)
         {

@@ -46,7 +46,70 @@ namespace PrimaryParagons.Paragons.Towers
 {
     public class ParagonIceMonkey
     {
-        public static TowerModel IceMonkeyParagon(GameModel model)
+        public class IceMonkeyParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "IceMonkey-520";
+        }
+        public class _0DegreesKelvin : ModParagonUpgrade<IceMonkeyParagon>
+        {
+            public override string DisplayName => "0° Kelvin";
+            public override int Cost => 400000;
+            public override string Description => "Only the strongest of Bloons are able to resist the cold icy winds.";
+            public override SpriteReference IconReference => Game.instance.model.GetUpgrade("Snowstorm").icon;
+            public override SpriteReference PortraitReference => Game.instance.model.GetTowerFromId("IceMonkey-520").portrait;
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("IceMonkey-042").GetBehavior<SlowBloonsZoneModel>().Duplicate());
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("IceMonkey-042").GetBehavior<LinkDisplayScaleToTowerRangeModel>().Duplicate());
+                towerModel.GetBehavior<SlowBloonsZoneModel>().speedScale = 0.5f;
+                towerModel.GetBehavior<SlowBloonsZoneModel>().bindRadiusToTowerRange = false;
+                towerModel.GetBehavior<SlowBloonsZoneModel>().zoneRadius = 9999.0f;
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("IceMonkey-042").GetBehaviors<DisplayModel>()[1].Duplicate());
+                towerModel.GetBehavior<LinkDisplayScaleToTowerRangeModel>().baseTowerRange = 9999.0f;
+                towerModel.GetBehavior<LinkDisplayScaleToTowerRangeModel>().displayRadius = 9999.0f;
+
+                var attackModel = towerModel.GetAttackModel();
+                towerModel.range *= 2.5f;
+                attackModel.range *= 2.5f;
+                attackModel.weapons[0].Rate = 0.25f;
+                attackModel.weapons[0].projectile.GetDamageModel().damage = 100.0f;
+                attackModel.weapons[0].projectile.GetBehavior<AddBonusDamagePerHitToBloonModel>().perHitDamageAddition = 50.0f;
+                var iceShard = attackModel.weapons[0].projectile.GetBehavior<AddBehaviorToBloonModel>().GetBehavior<EmitOnPopModel>().Duplicate();
+                iceShard.projectile.GetBehavior<TravelStraitModel>().Lifespan = 4.0f;
+                iceShard.projectile.AddBehavior(new ExpireProjectileAtScreenEdgeModel("ExpireProjectileAtScreenEdgeModel_"));
+                attackModel.weapons[0].projectile.AddBehavior(new CreateProjectileOnContactModel("CPOEFM", iceShard.projectile, iceShard.emission, false, false, false));
+
+                towerModel.AddBehavior(Game.instance.model.GetTowerFromId("IceMonkey-025").GetAttackModel().Duplicate());
+                var attackModel2 = towerModel.GetAttackModel(1);
+                attackModel2.range = towerModel.range;
+                attackModel2.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().damage = 50.0f;
+                attackModel2.weapons[0].projectile.GetBehavior<CreateProjectileOnContactModel>().projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class _0DegreesKelvinDisplay : ModTowerDisplay<IceMonkeyParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.IceMonkey, 5, 2, 0);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+
+            }
+        }
+        /*public static TowerModel IceMonkeyParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("IceMonkey-520").Duplicate();
             TowerModel backup = model.GetTowerFromId("IceMonkey-520").Duplicate();

@@ -44,7 +44,57 @@ namespace PrimaryParagons.Paragons.Towers
 {
     public class ParagonGlueGunner
     {
-        public static TowerModel GlueGunnerParagon(GameModel model)
+        public class GlueGunnerParagon : ModVanillaParagon
+        {
+            public override string BaseTower => "GlueGunner-205";
+        }
+        public class SuperbGlue : ModParagonUpgrade<GlueGunnerParagon>
+        {
+            public override string DisplayName => "Superb Glue";
+            public override int Cost => 600000;
+            public override string Description => "Glue that completely stops almost all Bloons and decimates every type of Bloon. Bloons affected by glue take extra damage.";
+            public override string Icon => "SuperbGlue_Icon";
+            public override string Portrait => "SuperbGlue_Portrait";
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
+                towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
+                var attackModel = towerModel.GetAttackModel();
+                towerModel.range *= 1.5f;
+                attackModel.range *= 1.5f;
+                attackModel.weapons[0].Rate = 0.2f;
+                attackModel.weapons[0].projectile.GetBehavior<TravelStraitModel>().Lifespan *= 1.5f;
+                attackModel.weapons[0].projectile.AddBehavior(Game.instance.model.GetTowerFromId("GlueGunner-250").GetAbility().GetBehavior<ActivateAttackModel>().attacks[0].weapons[0].projectile.GetBehavior<AddBonusDamagePerHitToBloonModel>().Duplicate());
+                attackModel.weapons[0].projectile.GetBehavior<AddBonusDamagePerHitToBloonModel>().perHitDamageAddition = 25.0f;
+                attackModel.weapons[0].projectile.GetDescendants<DamageOverTimeModel>().ForEach(model3 => model3.Interval = 0.05f);
+
+                //since we cant buff it always make it hit camo
+                towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+                towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
+            }
+
+        }
+        public class SuperbGlueDisplay : ModTowerDisplay<GlueGunnerParagon>
+        {
+            public override string BaseDisplay => GetDisplay(TowerType.GlueGunner, 2, 0, 5);
+
+            public override bool UseForTower(int[] tiers)
+            {
+                return IsParagon(tiers);
+            }
+
+            public override int ParagonDisplayIndex => 0;
+
+            public override void ModifyDisplayNode(UnityDisplayNode node)
+            {
+                foreach (var renderer in node.genericRenderers)
+                {
+                    renderer.material.mainTexture = GetTexture("SuperbGlue_Display");
+                    //node.SaveMeshTexture();
+                }
+            }
+        }
+        /*public static TowerModel GlueGunnerParagon(GameModel model)
         {
             TowerModel towerModel = model.GetTowerFromId("GlueGunner-205").Duplicate();
             TowerModel backup = model.GetTowerFromId("GlueGunner-205").Duplicate();
@@ -77,10 +127,10 @@ namespace PrimaryParagons.Paragons.Towers
             towerModel.portrait = ModContent.GetSpriteReference<Main>("SuperbGlue_Portrait");
             var boomerangParagon = Game.instance.model.GetTowerFromId("BoomerangMonkey-Paragon").Duplicate();
 
-            //towerModel.ApplyDisplay<GlueGunnerParagonDisplay>();
+            towerModel.ApplyDisplay<GlueGunnerParagonDisplay>();
 
             towerModel.AddBehavior(boomerangParagon.GetBehavior<ParagonTowerModel>());
-            //towerModel.GetBehavior<ParagonTowerModel>().displayDegreePaths.ForEach(path => path.assetPath = ModContent.GetDisplayGUID<GlueGunnerParagonDisplay>());
+            towerModel.GetBehavior<ParagonTowerModel>().displayDegreePaths.ForEach(path => path.assetPath = ModContent.GetDisplayGUID<GlueGunnerParagonDisplay>());
             towerModel.AddBehavior(boomerangParagon.GetBehavior<CreateSoundOnAttachedModel>());
 
             var attackModel = towerModel.GetAttackModel();
@@ -97,8 +147,8 @@ namespace PrimaryParagons.Paragons.Towers
             towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model2 => model2.isActive = false);
 
             return towerModel;
-        }
-        public class GlueGunnerParagonDisplay : ModDisplay
+        }*/
+        /*public class GlueGunnerParagonDisplay : ModDisplay
         {
             public override string BaseDisplay => Game.instance.model.GetTowerFromId("GlueGunner-205").display;
             public override void ModifyDisplayNode(UnityDisplayNode node)
@@ -108,7 +158,7 @@ namespace PrimaryParagons.Paragons.Towers
                     renderer.material.mainTexture = GetTexture("SuperbGlue_Display");
                 }
             }
-        }
+        }*/
         /*public class TackShooterParagonDisplay_Projectile : ModDisplay
         {
             public override string BaseDisplay => "e5edd901992846e409326a506d272633";

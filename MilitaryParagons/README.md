@@ -1,6 +1,4 @@
-Thanks to Chiss5618 for updating.
-
-Adds paragons for military towers. Credits to Depleted Supernova#1957 since im using the way he added paragons for this mod.
+Adds paragons for military towers. 
 
 Screenshot:
 

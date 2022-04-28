@@ -20,7 +20,6 @@ using System.IO;
 using BTD_Mod_Helper.Api.Towers;
 using Assets.Scripts.Unity.UI_New.InGame.StoreMenu;
 using UnityEngine.UI;
-using BTD_Mod_Helper.Extensions;
 using Assets.Scripts.Unity.UI_New.InGame.TowerSelectionMenu.TowerSelectionMenuThemes;
 using System.Collections.Generic;
 using Assets.Scripts.Simulation.Towers;

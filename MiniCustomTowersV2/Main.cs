@@ -20,7 +20,6 @@ using System.IO;
 using BTD_Mod_Helper.Api.Towers;
 using Assets.Scripts.Unity.UI_New.InGame.StoreMenu;
 using UnityEngine.UI;
-using BTD_Mod_Helper.Extensions;
 using Assets.Scripts.Unity.UI_New.InGame.TowerSelectionMenu.TowerSelectionMenuThemes;
 using System.Collections.Generic;
 using Assets.Scripts.Simulation.Towers;
@@ -108,7 +107,7 @@ namespace minicustomtowersv2
             internal static bool Prefix(ref StandardTowerPurchaseButton __instance)
             {
                 __instance.bg = __instance.gameObject.GetComponent<Image>();
-                var towerModel = __instance.baseTowerModel;
+                var towerModel = __instance.towerModel;
                 if(towerModel.baseId.Contains("MiniCustomTowers_V2_"))
                 {
                     __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerCustom"));

@@ -1,9 +1,6 @@
-/build/
-*.suo
-*.user
-vs/
-bin/
-obj/
-Debug/
-Release/
-packages/
+*/.vs/*
+*/bin/*
+*/obj/*
+*/Debug/*
+*/Release/*
+*/packages/*

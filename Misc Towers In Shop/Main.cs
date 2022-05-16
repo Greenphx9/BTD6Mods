@@ -46,13 +46,14 @@ using BTD_Mod_Helper.Api.ModOptions;
 using Assets.Scripts.Models.Towers.Mods;
 using Assets.Scripts.Unity.Towers.Mods;
 
-[assembly: MelonInfo(typeof(MiscTowersInShop.Main), "Misc Towers In Shop", "1.0.0", "Greenphx")]
+[assembly: MelonInfo(typeof(MiscTowersInShop.Main), "Misc Towers In Shop", "1.1.0", "Greenphx")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace MiscTowersInShop
 {
     public class Main : BloonsTD6Mod
     {
+        
         public override void OnApplicationStart()
         {
             base.OnApplicationStart();
@@ -92,6 +93,16 @@ namespace MiscTowersInShop
         {
             IsButton = false,
             displayName = "Glaive Dominus"
+        };
+        public static ModSettingBool AscendedShadowEnabled = new ModSettingBool(true)
+        {
+            IsButton = false,
+            displayName = "Ascended Shadow"
+        };
+        public static ModSettingBool NavarchOfTheSeasEnabled = new ModSettingBool(true)
+        {
+            IsButton = false,
+            displayName = "Navarch Of The Seas"
         };
         public class Sentry : ModTower
         {
@@ -418,6 +429,60 @@ namespace MiscTowersInShop
             }
         }
 
+        public class AscendedShadow : ModTower
+        {
+            public override string BaseTower => "NinjaMonkey-Paragon";
+            public override string Name => "AscendedShadow";
+            public override string DisplayName => "Ascended Shadow";
+            public override string Description => "The complete assassin package for dealing with any Bloon threat.";
+            public override int Cost => 600000;
+            public override int TopPathUpgrades => 0;
+            public override int MiddlePathUpgrades => 0;
+            public override int BottomPathUpgrades => 0;
+            public override string TowerSet => "Support";
+            public override void ModifyBaseTowerModel(TowerModel towerModel)
+            {
+                towerModel.icon = towerModel.portrait = Game.instance.model.GetTowerFromId("NinjaMonkey-Paragon").portrait;
+                towerModel.isParagon = false;
+                towerModel.dontDisplayUpgrades = true;
+            }
+            public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+            {
+                if (!AscendedShadowEnabled)
+                {
+                    return -1;
+                }
+                return 112;
+            }
+        }
+
+        public class NavarchOfTheSeas : ModTower
+        {
+            public override string BaseTower => "MonkeyBuccaneer-Paragon";
+            public override string Name => "NavarchOfTheSeas";
+            public override string DisplayName => "Navarch Of The Seas";
+            public override string Description => "	The greatest thing ever to float on water.";
+            public override int Cost => 540000;
+            public override int TopPathUpgrades => 0;
+            public override int MiddlePathUpgrades => 0;
+            public override int BottomPathUpgrades => 0;
+            public override string TowerSet => "Support";
+            public override void ModifyBaseTowerModel(TowerModel towerModel)
+            {
+                towerModel.icon = towerModel.portrait = Game.instance.model.GetTowerFromId("MonkeyBuccaneer-Paragon").portrait;
+                towerModel.isParagon = false;
+                towerModel.dontDisplayUpgrades = true;
+            }
+            public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+            {
+                if (!NavarchOfTheSeasEnabled)
+                {
+                    return -1;
+                }
+                return 113;
+            }
+        }
+
         public override void OnGameModelLoaded(GameModel model)
         {
             base.OnGameModelLoaded(model);
@@ -427,6 +492,7 @@ namespace MiscTowersInShop
             base.OnUpdate();
             
         }
+        
         [HarmonyPatch(typeof(StandardTowerPurchaseButton), nameof(StandardTowerPurchaseButton.UpdateIcon))]
         public class SetTower
         {
@@ -434,7 +500,7 @@ namespace MiscTowersInShop
             internal static bool Prefix(StandardTowerPurchaseButton __instance) //ref ShopMenu shopMenu, ref TowerModel towerModel
             {
                 __instance.bg = __instance.gameObject.GetComponent<Image>();
-                var towerModel = __instance.baseTowerModel;
+                var towerModel = __instance.towerModel;
                 if(towerModel.baseId == "MiscTowersInShop-Sentry ")
                 {
                     __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerGreen"));
@@ -480,6 +546,14 @@ namespace MiscTowersInShop
                     __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerParagon"));
                 }
                 if (towerModel.baseId == "MiscTowersInShop-GlaiveDominus")
+                {
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerParagon"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-AscendedShadow")
+                {
+                    __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerParagon"));
+                }
+                if (towerModel.baseId == "MiscTowersInShop-NavarchOfTheSeas")
                 {
                     __instance.SetBG(ModContent.GetSprite<Main>("TowerContainerParagon"));
                 }
